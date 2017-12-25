@@ -26,6 +26,13 @@ class TestPage extends React.Component {
 			}
 		})
 
+		dispatch({
+			type: 'testpage/getData',
+			payload: {
+				bb: 1
+			}
+		})
+
 
 
 	}

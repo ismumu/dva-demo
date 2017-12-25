@@ -1,4 +1,8 @@
 
+
+import { getData } from '../services/testpage';
+
+
 export default {
 	namespace: 'testpage',
 	state: {
@@ -11,10 +15,13 @@ export default {
 	},
 
 	effects: {
-		// updateState ({})
-		// *fetch({ payload }, { call, put }) {
-		// 	yield put({ type: 'save' });
-		// },
+
+		* getData(action, { call, put }) {
+
+			const data = yield call(getDataApi);
+			console.log(data);
+		}
+
 	},
 
 	reducers: {
