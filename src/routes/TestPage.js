@@ -13,13 +13,31 @@ class TestPage extends React.Component {
 		super(props)
 	}
 
+
+
+
+	myClick = () => {
+		const { dispatch } = this.props;
+
+		dispatch({
+			type: 'testpage/updateState',
+			payload: {
+				aa: 1
+			}
+		})
+
+
+
+	}
+
 	render () {
 
-		console.log(this.props)
+		const { dispatch, testpage } = this.props;
 
 		return (
-			<div>11111{this.props.value}</div>
+			<div onClick={this.myClick}>{testpage.text} { testpage.algin }</div>
 		)
+
 
 	}
 

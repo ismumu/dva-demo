@@ -3,6 +3,7 @@ export default {
 	namespace: 'testpage',
 	state: {
 		text: 'aaaaaa',
+		algin: '',
 	},
 
 	subscriptions: {
@@ -10,15 +11,20 @@ export default {
 	},
 
 	effects: {
+		// updateState ({})
 		// *fetch({ payload }, { call, put }) {
 		// 	yield put({ type: 'save' });
 		// },
 	},
 
 	reducers: {
-		// save(state, action) {
-		// 	return { ...state, ...action.payload };
-		// },
+		updateState ( state, action ) {
+
+			return {
+				text: 'bbbbbbbb',
+				algin: 'center'
+			}
+		}
 	},
 
 };

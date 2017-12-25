@@ -9,21 +9,21 @@ import IndexPage from './routes/IndexPage';
 import Test404Page from './routes/Test404Page';
 
 function RouterConfig({ history, app }) {
-  return (
-    <Router history={history}>
-      <Switch>
-        <Route path="/" exact component={IndexPage} />
-        <Route path="/test" exact component={
-			dynamic({
-				app,
-				models: () => import(`./models/testpage`),
-				component: () => import('./routes/TestPage'),
-			})
-		} />
-        <Route path="*" exact component={Test404Page} />
-      </Switch>
-    </Router>
-  );
+	return (
+		<Router history={history}>
+			<Switch>
+				<Route path="/" exact component={IndexPage} />
+				<Route path="/test" exact component={
+					dynamic({
+						app,
+						models: () => [import('./models/testpage.js')],
+						component: () => import('./routes/TestPage.js'),
+					})
+				} />
+				<Route path="*" exact component={Test404Page} />
+			</Switch>
+		</Router>
+	);
 }
 
 export default RouterConfig;
