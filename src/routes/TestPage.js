@@ -25,8 +25,4 @@ class TestPage extends React.Component {
 
 }
 
-
-export default connect(({testpage}) => {
-	console.log(testpage)
-	return {testpage};
-})(TestPage);
+export default connect(({testpage}) => ({testpage}))(TestPage);
