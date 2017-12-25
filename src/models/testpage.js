@@ -1,6 +1,7 @@
 
 
-import { getData } from '../services/testpage';
+import { getDataApi } from '../services/testpage';
+
 
 
 export default {
@@ -17,7 +18,6 @@ export default {
 	effects: {
 
 		* getData(action, { call, put }) {
-
 			const data = yield call(getDataApi);
 			console.log(data);
 		}
