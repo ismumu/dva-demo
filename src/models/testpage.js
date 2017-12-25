@@ -19,7 +19,7 @@ export default {
 
 		* getData(action, { call, put }) {
 			const data = yield call(getDataApi);
-			console.log(data);
+			console.log(data.data);
 		}
 
 	},
