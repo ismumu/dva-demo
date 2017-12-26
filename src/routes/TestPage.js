@@ -67,6 +67,9 @@ class TestPage extends React.Component {
 					dataSource={testpage.dataSource}
 					columns={columns}
 					loading={testpage.showLoading}
+					locale={{
+						emptyText: '暂无数据',
+					}}
 				/>
 				<Button
 					onClick={this.getData}
