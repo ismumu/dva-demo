@@ -9,6 +9,8 @@ export default {
 	state: {
 		text: 'aaaaaa',
 		algin: '',
+		dataSource: [],
+		showLoading: false,
 	},
 
 	subscriptions: {
@@ -18,20 +20,36 @@ export default {
 	effects: {
 
 		* getData(action, { call, put }) {
+
 			const data = yield call(getDataApi);
-			console.log(data.data);
+
+			yield put({
+				type: 'querySuccess',
+				payload: data,
+			})
+
 		}
 
 	},
 
 	reducers: {
-		updateState ( state, action ) {
 
+		querySuccess ( state, action ) {
 			return {
-				text: 'bbbbbbbb',
-				algin: 'center'
+				...state,
+				dataSource: action.payload.data.list,
+				showLoading: false,
+			}
+		},
+
+		updateState ( state, action ) {
+			return {
+				...state,
+				...action.payload,
 			}
 		}
+
+
 	},
 
 };
