@@ -1,7 +1,7 @@
 import request from '../utils/request';
 
 export function getDataApi() {
-	return request('/api/getdata', {
+	return request('/mock/getdata', {
 		// method: 'get',
 		headers: {
 			'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'

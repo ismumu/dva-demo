@@ -1,3 +1,4 @@
+
 module.exports = {
 	errorCode: 0,
 	list: [

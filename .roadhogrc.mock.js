@@ -1,6 +1,11 @@
 
+
+
+import { delay } from 'roadhog-api-doc';
+
 export default {
-	'/api/getdata' (req, res) {
-        res.json(require('./mock/data.js'));
+	'/mock/getdata' (req, res) {
+		res.json(require('./mock/data.js'));
     },
 };
+
