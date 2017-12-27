@@ -57,11 +57,11 @@ class Transformation extends React.Component {
 		let oneData, doubleData;
 
 		if ( idCode === 'one' && value ) {
-			oneData = value * 1;
+			oneData = value;
 			doubleData = value * 2;
 		} else if ( idCode === 'double' && value ) {
 			oneData = value / 2;
-			doubleData = value * 1;
+			doubleData = value;
 		} else {
 			oneData = '';
 			doubleData = '';
