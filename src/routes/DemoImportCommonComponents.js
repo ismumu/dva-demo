@@ -3,65 +3,75 @@
 import React from 'react';
 import dva, { connect } from 'dva';
 
-import { Table, Button } from 'antd';
-import 'antd/dist/antd.css';
-
-
 import styles from './DemoImportCommonComponents.less';
 
 
 
 
 
-class Number extends React.Component {
+class Fieldset extends React.Component {
 
 	constructor (props) {
 		super(props);
 	}
 
-	handleChange = (val) => {
-		console.log(val);
+	handleChange = (e) => {
+		let value = e.target.value;
+		this.props.onFieldsetChange({
+			value: value,
+			idCode: this.props.idCode,
+		});
 	}
 
 	render () {
 		return (
 			<fieldset>
-				<legend>原始数字</legend>
-				请输入数字: <input type="number" onChange={this.handleChange} />
+				<legend>{this.props.titleText}</legend>
+				请输入数字: <input type="number" onChange={this.handleChange} value={this.props.showValue} />
 			</fieldset>
 		)
 	}
 }
-
-class DoubleNumber extends React.Component {
-
-	constructor (props) {
-		super(props);
-	}
-
-	render () {
-		return (
-			<fieldset>
-				<legend>放大2倍的数字</legend>
-				请输入数字: <input type="number" />
-			</fieldset>
-		)
-	}
-}
-
 
 
 class Transformation extends React.Component {
 
 	constructor (props) {
 		super(props);
+		this.state = {
+			value: '',
+			idCode: '',
+		}
+	}
+
+	handleChange = (obj) => {
+		this.setState({
+			...obj
+		})
 	}
 
 	render () {
+		let idCode = this.state.idCode;
+		let value = parseFloat(this.state.value);
+
+		let oneData, doubleData;
+
+		if ( idCode === 'one' && value ) {
+			oneData = value * 1;
+			doubleData = value * 2;
+		} else if ( idCode === 'double' && value ) {
+			oneData = value / 2;
+			doubleData = value * 1;
+		} else {
+			oneData = '';
+			doubleData = '';
+		}
+
+
 		return (
 			<div>
-				<Number></Number>
-				<DoubleNumber></DoubleNumber>
+				<Fieldset titleText="原始数字" idCode="one" onFieldsetChange={this.handleChange} showValue={oneData}></Fieldset>
+				<Fieldset titleText="2倍数字" idCode="double" onFieldsetChange={this.handleChange} showValue={doubleData}></Fieldset>
 			</div>
 		)
 	}
@@ -79,10 +89,10 @@ class DemoImportCommonComponents extends React.Component {
 
 		const { dispatch, demoImportCommonComponents } = this.props;
 
-		console.log(demoImportCommonComponents);
-
 		return (
-			<Transformation></Transformation>
+			<div className={styles.body}>
+				<Transformation></Transformation>
+			</div>
 		)
 
 	}
