@@ -70,7 +70,7 @@ class Transformation extends React.Component {
 
 		return (
 			<div>
-				<Fieldset titleText="原始数字" idCode="one" onFieldsetChange={this.handleChange} showValue={oneData}></Fieldset>
+				<Fieldset titleText="1倍数字" idCode="one" onFieldsetChange={this.handleChange} showValue={oneData}></Fieldset>
 				<Fieldset titleText="2倍数字" idCode="double" onFieldsetChange={this.handleChange} showValue={doubleData}></Fieldset>
 			</div>
 		)
