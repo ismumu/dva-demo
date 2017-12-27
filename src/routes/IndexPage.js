@@ -26,7 +26,7 @@ function IndexPage() {
 					<Link to="/test">go to testpage</Link>
 				</Button>
 				<Button type="primary" size="large">
-					<Link to="/doubleNumber">go to doubleNumber</Link>
+					<Link to="/demoImportCommonComponents">go to DemoImportCommonComponents</Link>
 				</Button>
 			</ButtonGroup>
 		</div>

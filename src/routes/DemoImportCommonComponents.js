@@ -7,7 +7,7 @@ import { Table, Button } from 'antd';
 import 'antd/dist/antd.css';
 
 
-import styles from './DoubleNumber.less';
+import styles from './DemoImportCommonComponents.less';
 
 
 
@@ -69,7 +69,7 @@ class Transformation extends React.Component {
 
 
 
-class Demo1Page extends React.Component {
+class DemoImportCommonComponents extends React.Component {
 
 	constructor (props) {
 		super(props)
@@ -77,9 +77,9 @@ class Demo1Page extends React.Component {
 
 	render () {
 
-		const { dispatch, doubleNumber } = this.props;
+		const { dispatch, demoImportCommonComponents } = this.props;
 
-		console.log(doubleNumber);
+		console.log(demoImportCommonComponents);
 
 		return (
 			<Transformation></Transformation>
@@ -89,4 +89,4 @@ class Demo1Page extends React.Component {
 
 }
 
-export default connect(({doubleNumber}) => ({doubleNumber}))(Demo1Page);
+export default connect(({demoImportCommonComponents}) => ({demoImportCommonComponents}))(DemoImportCommonComponents);

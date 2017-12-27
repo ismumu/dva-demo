@@ -2,7 +2,7 @@
 
 
 export default {
-	namespace: 'doubleNumber',
+	namespace: 'demoImportCommonComponents',
 	state: {
 		numberVal: 1111,
 		doubleNumber: 33333,

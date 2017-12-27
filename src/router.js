@@ -21,11 +21,11 @@ function RouterConfig({ history, app }) {
 						component: () => import('./routes/TestPage.js'),
 					})
 				} />
-				<Route path="/doubleNumber" exact component={
+				<Route path="/demoImportCommonComponents" exact component={
 					dynamic({
 						app,
-						models: () => [import('./models/doubleNumber.js')],
-						component: () => import('./routes/DoubleNumber.js'),
+						models: () => [import('./models/demoImportCommonComponents.js')],
+						component: () => import('./routes/DemoImportCommonComponents.js'),
 					})
 				} />
 				<Route path="*" exact component={Test404Page} />
