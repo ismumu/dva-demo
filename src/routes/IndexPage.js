@@ -9,14 +9,26 @@ import { Link } from 'dva/router';
 import { Button } from 'antd';
 import 'antd/dist/antd.css';
 
+
+const ButtonGroup = Button.Group;
+
+
+
+
 function IndexPage() {
 
 	return (
 		<div className={styles.normal}>
 			<h1 className={styles.title}>Yay! Welcome to dva!</h1>
-			<Button type="primary" size="large">
-				<Link to="/test">go to testpage</Link>
-			</Button>
+
+			<ButtonGroup>
+				<Button type="primary" size="large">
+					<Link to="/test">go to testpage</Link>
+				</Button>
+				<Button type="primary" size="large">
+					<Link to="/doubleNumber">go to doubleNumber</Link>
+				</Button>
+			</ButtonGroup>
 		</div>
 	);
 }

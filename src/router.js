@@ -9,6 +9,7 @@ import IndexPage from './routes/IndexPage';
 import Test404Page from './routes/Test404Page';
 
 function RouterConfig({ history, app }) {
+
 	return (
 		<Router history={history}>
 			<Switch>
@@ -18,6 +19,13 @@ function RouterConfig({ history, app }) {
 						app,
 						models: () => [import('./models/testpage.js')],
 						component: () => import('./routes/TestPage.js'),
+					})
+				} />
+				<Route path="/doubleNumber" exact component={
+					dynamic({
+						app,
+						models: () => [import('./models/doubleNumber.js')],
+						component: () => import('./routes/DoubleNumber.js'),
 					})
 				} />
 				<Route path="*" exact component={Test404Page} />
