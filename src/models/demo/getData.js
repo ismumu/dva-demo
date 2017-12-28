@@ -1,11 +1,11 @@
 
 
-import { getDataApi } from '../services/testpage';
+import { getDataApi } from '../../services/demo/getData';
 
 
 
 export default {
-	namespace: 'testpage',
+	namespace: 'getdata',
 	state: {
 		text: 'aaaaaa',
 		algin: '',

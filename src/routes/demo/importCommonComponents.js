@@ -3,7 +3,7 @@
 import React from 'react';
 import dva, { connect } from 'dva';
 
-import styles from './DemoImportCommonComponents.less';
+import styles from './importCommonComponents.less';
 
 
 

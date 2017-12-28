@@ -5,30 +5,41 @@ import dynamic from 'dva/dynamic';
 
 
 
-import IndexPage from './routes/IndexPage';
-import Test404Page from './routes/Test404Page';
+
+
 
 function RouterConfig({ history, app }) {
 
 	return (
 		<Router history={history}>
 			<Switch>
-				<Route path="/" exact component={IndexPage} />
-				<Route path="/test" exact component={
+				<Route path="/" exact component={
 					dynamic({
 						app,
-						models: () => [import('./models/testpage.js')],
-						component: () => import('./routes/TestPage.js'),
+						models: () => [import('./models/index/index')],
+						component: () => import('./routes/index/index'),
 					})
 				} />
-				<Route path="/demoImportCommonComponents" exact component={
+				<Route path="/demo/getData" exact component={
 					dynamic({
 						app,
-						models: () => [import('./models/demoImportCommonComponents.js')],
-						component: () => import('./routes/DemoImportCommonComponents.js'),
+						models: () => [import('./models/demo/getData')],
+						component: () => import('./routes/demo/getData'),
 					})
 				} />
-				<Route path="*" exact component={Test404Page} />
+				<Route path="/demo/importCommonComponents" exact component={
+					dynamic({
+						app,
+						models: () => [import('./models/demo/importCommonComponents.js')],
+						component: () => import('./routes/demo/importCommonComponents.js'),
+					})
+				} />
+				<Route path="*" exact component={
+					dynamic({
+						app,
+						component: () => import('./routes/error/index'),
+					})
+				} />
 			</Switch>
 		</Router>
 	);

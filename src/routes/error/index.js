@@ -1,13 +1,11 @@
 import React from 'react';
 import { connect } from 'dva';
 
-function TestPage() {
+function ErrorPage() {
     return (
         <h1>404</h1>
     );
 }
 
-TestPage.propTypes = {
-};
 
-export default connect()(TestPage);
+export default connect()(ErrorPage);

@@ -1,4 +1,7 @@
 import dva from 'dva';
+
+import 'antd/dist/antd.css';
+
 import './index.css';
 
 import createLoading from 'dva-loading';

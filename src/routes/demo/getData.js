@@ -2,13 +2,10 @@
 
 import React from 'react';
 import dva, { connect } from 'dva';
-import PropTypes from 'prop-types';
 
 import { Table, Button } from 'antd';
-import 'antd/dist/antd.css';
 
-
-import styles from './TestPage.less';
+import styles from './getData.less';
 
 
 
@@ -30,7 +27,7 @@ import styles from './TestPage.less';
 
 
 
-class TestPage extends React.Component {
+class GetData extends React.Component {
 
 	constructor (props) {
 		super(props)
@@ -41,7 +38,7 @@ class TestPage extends React.Component {
 		const { dispatch } = this.props;
 
 		dispatch({
-			type: 'testpage/updateState',
+			type: 'getdata/updateState',
 			payload: {
 				showLoading: true,
 			}
@@ -49,7 +46,7 @@ class TestPage extends React.Component {
 
 
 		dispatch({
-			type: 'testpage/getData',
+			type: 'getdata/getData',
 			payload: {
 				bb: 1
 			}
@@ -58,15 +55,15 @@ class TestPage extends React.Component {
 
 	render () {
 
-		const { dispatch, testpage } = this.props;
+		const { dispatch, getdata } = this.props;
 
 		return (
 			<div className={styles.body}>
 				<Table
 					className={styles.table}
-					dataSource={testpage.dataSource}
+					dataSource={getdata.dataSource}
 					columns={columns}
-					loading={testpage.showLoading}
+					loading={getdata.showLoading}
 					locale={{
 						emptyText: '暂无数据',
 					}}
@@ -74,7 +71,7 @@ class TestPage extends React.Component {
 				<Button
 					onClick={this.getData}
 					type="primary"
-					loading={testpage.showLoading}
+					loading={getdata.showLoading}
 				>点击加载数据</Button>
 			</div>
 		)
@@ -84,4 +81,4 @@ class TestPage extends React.Component {
 
 }
 
-export default connect(({testpage}) => ({testpage}))(TestPage);
+export default connect(({getdata}) => ({getdata}))(GetData);
