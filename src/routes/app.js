@@ -6,6 +6,10 @@ import { Link, withRouter } from 'dva/router';
 import styles from './app.css';
 
 
+import Menus from '../components/Layout/Menu';
+
+
+
 import {
 	Layout,
 	Menu,
@@ -44,7 +48,6 @@ const App = ({
 	}
 
 
-
 	return (
 		<Layout className={styles.layout}>
 			<Sider
@@ -53,24 +56,8 @@ const App = ({
 				onCollapse={ onCollapse }
 			>
 				<div className={styles.logo}>Dva-demo</div>
+				<Menus />
 
-				<Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-					<Menu.Item key="1">
-						<Icon type="user" />
-						<Link className={styles.link} to="/">index</Link>
-					</Menu.Item>
-					<SubMenu
-						key="sub-demo"
-						title={<span><Icon type="appstore-o" /><span>Demo</span></span>}
-					>
-						<Menu.Item key="sub-demo-1">
-							<Link className={styles.link} to="/demo/getData">getData</Link>
-						</Menu.Item>
-						<Menu.Item key="sub-demo-2">
-							<Link className={styles.link} to="/demo/importCommonComponents">importCommonComponents</Link>
-						</Menu.Item>
-					</SubMenu>
-				</Menu>
 			</Sider>
 
 			<Layout>

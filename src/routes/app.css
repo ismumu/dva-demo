@@ -45,10 +45,3 @@
 .trigger:hover {
 	color: #1890ff;
 }
-
-
-
-:global(.ant-menu-item) .link {
-	color: rgba(255, 255, 255, 0.65);
-	display: inline-block;
-}

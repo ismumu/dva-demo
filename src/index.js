@@ -16,7 +16,7 @@ app.use({});
 app.model(require('./models/app.js'));
 
 // 4. Router
-app.router(require('./router'));
+app.router(require('./routes/router/index'));
 
 // 5. Start
 app.start('#root');
