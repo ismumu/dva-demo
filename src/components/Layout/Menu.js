@@ -1,12 +1,14 @@
 
+import React from 'react';
+import dva, { connect } from 'dva';
+import { Link } from 'dva/router';
+
 import {
 	Layout,
 	Menu,
-	Breadcrumb,
 	Icon,
 } from 'antd';
 
-import { Link } from 'dva/router';
 
 import routeList from '../../routes/router/routeList';
 
@@ -49,4 +51,5 @@ const Menus = function () {
 }
 
 
-export default Menus;
+// export default Menus;
+export default connect()(Menus);

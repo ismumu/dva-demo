@@ -5,20 +5,17 @@ import { Link, withRouter } from 'dva/router';
 
 import styles from './app.css';
 
-
-import Menus from '../components/Layout/Menu';
-
-
-
 import {
 	Layout,
-	Menu,
 	Breadcrumb,
 	Icon,
 } from 'antd';
 
 const { Header, Content, Footer, Sider } = Layout;
-const SubMenu = Menu.SubMenu;
+
+
+
+import { Menus } from '../components/Layout/index'
 
 
 
@@ -28,15 +25,6 @@ const App = ({
 	app,
 	location,
 }) => {
-
-
-	// console.log(React.Children);
-
-	// children.map( (a, b) => {
-	// 	console.log(a)
-	// 	console.log(b)
-	// })
-
 
 	const onCollapse = () => {
 		dispatch({
@@ -57,7 +45,6 @@ const App = ({
 			>
 				<div className={styles.logo}>Dva-demo</div>
 				<Menus />
-
 			</Sider>
 
 			<Layout>
