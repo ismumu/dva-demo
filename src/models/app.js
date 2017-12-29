@@ -1,8 +1,6 @@
 
-
-
 export default {
-	namespace: 'modelsIndex',
+	namespace: 'app',
 
 	state: {
 		collapsed: false,
