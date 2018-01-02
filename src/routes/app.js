@@ -7,7 +7,6 @@ import styles from './app.css';
 
 import {
 	Layout,
-	Breadcrumb,
 	Icon,
 } from 'antd';
 
@@ -58,10 +57,6 @@ const App = ({
 				</Header>
 
 				<Content className={styles.contentWrap}>
-					<Breadcrumb className={styles.breadcrumb}>
-						<Breadcrumb.Item>User</Breadcrumb.Item>
-						<Breadcrumb.Item>Bill</Breadcrumb.Item>
-					</Breadcrumb>
 					<div className={styles.content}>
 						{children}
 					</div>
