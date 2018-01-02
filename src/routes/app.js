@@ -15,14 +15,14 @@ const { Header, Content, Footer, Sider } = Layout;
 
 
 
-import { Menus } from '../components/Layout/index'
+import Menus from '../components/menu/menu'
 
 
 
 const App = ({
 	children,
 	dispatch,
-	app,
+	dvaDemoApp,
 	location,
 }) => {
 
@@ -30,7 +30,7 @@ const App = ({
 		dispatch({
 			type: 'app/updateState',
 			payload: {
-				collapsed: !app.collapsed,
+				collapsed: !dvaDemoApp.collapsed,
 			}
 		})
 	}
@@ -40,11 +40,11 @@ const App = ({
 		<Layout className={styles.layout}>
 			<Sider
 				collapsible
-				collapsed={ app.collapsed }
+				collapsed={ dvaDemoApp.collapsed }
 				onCollapse={ onCollapse }
 			>
 				<div className={styles.logo}>Dva-demo</div>
-				<Menus />
+				<Menus pathname={dvaDemoApp.pathname} />
 			</Sider>
 
 			<Layout>
@@ -52,7 +52,7 @@ const App = ({
 
 					<Icon
 						className={styles.trigger}
-						type={app.collapsed ? 'menu-unfold' : 'menu-fold'}
+						type={dvaDemoApp.collapsed ? 'menu-unfold' : 'menu-fold'}
 						onClick={ onCollapse }
 						/>
 				</Header>
@@ -75,7 +75,7 @@ const App = ({
 
 
 // export default App;
-export default withRouter(connect(({app}) => ({app}))(App));
+export default withRouter(connect(({dvaDemoApp}) => ({dvaDemoApp}))(App));
 
 // export default withRouter(connect(({ app, loading }) => ({ app, loading }))(App))
 // export default withRouter(connect(({ app, loading }) => {

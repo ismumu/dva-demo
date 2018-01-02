@@ -1,17 +1,22 @@
 
 export default {
-	namespace: 'app',
+	namespace: 'dvaDemoApp',
 
 	state: {
 		collapsed: false,
+		pathname: '/',
 	},
 
 	subscriptions: {
 		setup({ dispatch, history }) {
-			// console.log(history)
-			// history.listen((locaion) => {
-				// console.log(locaion.pathname);
-			// })
+			history.listen((locaion) => {
+				dispatch({
+					type: 'updateState',
+					payload: {
+						pathname: locaion.pathname,
+					}
+				})
+			})
 		},
 	},
 
