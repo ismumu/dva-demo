@@ -20,31 +20,48 @@ const SubMenu = Menu.SubMenu;
 
 const Menus = function () {
 
-	console.log(1111);
+	// 组装数据
+	let dataObj = {}
+	routeList.map((obj, key) => {
+		let code = obj.parentCode;
+		dataObj[code] = [...(dataObj[code] || []), obj];
+	})
 
-	// routeList.map((obj, key) => {
-	// 	console.log(obj);
-	// 	console.log(key);
-	// })
+	// 组装menu数组
+	let menuArray = [];
+	for ( let key in dataObj ) {
+		if ( key === 'error' ) break;
 
+		let valueArray = dataObj[key];
+		if ( valueArray.length === 1 ) {
+			menuArray.push(
+				<Menu.Item key={valueArray[0].path}>
+					<Link className={styles.link} to={valueArray[0].path}>{valueArray[0].name}</Link>
+				</Menu.Item>
+			)
+		} else {
+			let subMenuArray = [];
+			valueArray.map((obj, key) => {
+				subMenuArray.push(
+					<Menu.Item key={obj.path}>
+						<Link className={styles.link} to={obj.path}>{obj.name}</Link>
+					</Menu.Item>
+				)
+			})
+			menuArray.push(
+				<SubMenu
+					key={valueArray[0].parentCode}
+					title={<span>{valueArray[0].parentName}</span>}
+				>
+					{ subMenuArray }
+				</SubMenu>
+			)
+		}
+	}
 
 	return (
-		<Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-			<Menu.Item key="1">
-				<Icon type="user" />
-				<Link className={styles.link} to="/">index</Link>
-			</Menu.Item>
-			<SubMenu
-				key="sub-demo"
-				title={<span><Icon type="appstore-o" /><span>Demo</span></span>}
-			>
-				<Menu.Item key="sub-demo-1">
-					<Link className={styles.link} to="/demo/getData">getData</Link>
-				</Menu.Item>
-				<Menu.Item key="sub-demo-2">
-					<Link className={styles.link} to="/demo/importCommonComponents">importCommonComponents</Link>
-				</Menu.Item>
-			</SubMenu>
+		<Menu theme="dark" mode="inline">
+			{ menuArray }
 		</Menu>
 	)
 
