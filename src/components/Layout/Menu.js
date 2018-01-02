@@ -30,6 +30,7 @@ const Menus = function () {
 	// 组装menu数组
 	let menuArray = [];
 	for ( let key in dataObj ) {
+
 		if ( key === 'error' ) break;
 
 		let valueArray = dataObj[key];
@@ -60,7 +61,7 @@ const Menus = function () {
 	}
 
 	return (
-		<Menu theme="dark" defaultSelectedKeys={['/']} mode="inline">
+		<Menu theme="dark" defaultOpenKeys={['demo']} defaultSelectedKeys={['/demo/getData']} mode="inline">
 			{ menuArray }
 		</Menu>
 	)
