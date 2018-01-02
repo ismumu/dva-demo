@@ -58,7 +58,7 @@ class GetData extends React.Component {
 		const { dispatch, getdata } = this.props;
 
 		return (
-			<div className={styles.body}>
+			<div>
 				<Table
 					className={styles.table}
 					dataSource={getdata.dataSource}

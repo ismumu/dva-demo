@@ -60,7 +60,7 @@ const Menus = function () {
 	}
 
 	return (
-		<Menu theme="dark" mode="inline">
+		<Menu theme="dark" defaultSelectedKeys={['/']} mode="inline">
 			{ menuArray }
 		</Menu>
 	)

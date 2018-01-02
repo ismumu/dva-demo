@@ -7,7 +7,12 @@ export default {
 	},
 
 	subscriptions: {
-		// setup({ dispatch, history }) {},
+		setup({ dispatch, history }) {
+			// console.log(history)
+			// history.listen((locaion) => {
+				// console.log(locaion.pathname);
+			// })
+		},
 	},
 
 	effects: {

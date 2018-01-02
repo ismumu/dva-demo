@@ -66,9 +66,7 @@ const App = ({
 						{children}
 					</div>
 				</Content>
-				<Footer className={styles.footer} >
-					Ant Design ©2016 Created by Ant UED
-				</Footer>
+				<Footer className={styles.footer} >Ant Design ©2016 Created by Ant UED</Footer>
 			</Layout>
 		</Layout>
 	);
@@ -76,8 +74,8 @@ const App = ({
 
 
 
-// export default connect()(App);
-export default connect(({app}) => ({app}))(App);
+// export default App;
+export default withRouter(connect(({app}) => ({app}))(App));
 
 // export default withRouter(connect(({ app, loading }) => ({ app, loading }))(App))
 // export default withRouter(connect(({ app, loading }) => {
