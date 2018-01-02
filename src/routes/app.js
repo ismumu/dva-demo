@@ -28,7 +28,7 @@ const App = ({
 
 	const onCollapse = () => {
 		dispatch({
-			type: 'app/updateState',
+			type: 'dvaDemoApp/updateState',
 			payload: {
 				collapsed: !dvaDemoApp.collapsed,
 			}
