@@ -24,6 +24,14 @@ const routeList = [
 		component: () => import('../demo/importCommonComponents.js'),
 	},
 	{
+		path: '/demo/test-ts',
+		name: 'test ts',
+		parentCode: 'demo',
+		parentName: 'Demo',
+		// models: () => [import('../../models/demo/importCommonComponents.js')],
+		component: () => import('../demo/testTs.tsx'),
+	},
+	{
 		path: '*',
 		parentCode: 'error',
 		component: () => import('../error/index'),
