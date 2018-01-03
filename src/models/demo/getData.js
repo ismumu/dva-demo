@@ -22,7 +22,6 @@ export default {
 		* getData(action, { call, put }) {
 
 			const data = yield call(getDataApi);
-
 			yield put({
 				type: 'querySuccess',
 				payload: data,
@@ -35,9 +34,20 @@ export default {
 	reducers: {
 
 		querySuccess ( state, action ) {
+
+			// 给返回的数据追加随机key
+			action.payload.data.list.map((obj) => {
+
+				let key = Math.random().toString().substr(2);
+
+				obj.key = key;
+				obj.address = '西湖区湖底公园' + key + '号';
+
+			})
+
 			return {
 				...state,
-				dataSource: action.payload.data.list,
+				dataSource: state.dataSource.concat(action.payload.data.list),
 				showLoading: false,
 			}
 		},

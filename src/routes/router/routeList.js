@@ -1,11 +1,11 @@
 
 const routeList = [
     {
-	  path: '/',
-	  name: '首页',
-	  parentCode: 'index',
-      models: () => [import('../../models/index/index')],
-      component: () => import('../index/index'),
+		path: '/',
+		name: '首页',
+		parentCode: 'index',
+		models: () => [import('../../models/index/index')],
+		component: () => import('../index/index'),
 	},
 	{
 		path: '/demo/getData',
