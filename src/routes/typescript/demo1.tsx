@@ -19,7 +19,7 @@ interface Person {
 
 
 
-class TestTs extends React.Component {
+class TsDemo1 extends React.Component {
 
 	constructor (props) {
 		super(props)
@@ -40,4 +40,4 @@ class TestTs extends React.Component {
 }
 
 
-export default TestTs;
+export default TsDemo1;

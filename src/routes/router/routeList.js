@@ -32,7 +32,7 @@ const routeList = [
 	},
 	{
 		path: '/typescript/demo2',
-		name: 'demo 2',
+		name: '基础类型',
 		parentCode: 'typescript',
 		parentName: 'TypeScript',
 		component: () => import('../typescript/demo2.tsx'),

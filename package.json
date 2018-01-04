@@ -10,6 +10,7 @@
     "install-node": "6.11.1"
   },
   "dependencies": {
+    "@types/css-modules": "^1.0.0",
     "antd": "^3.0.3",
     "babel-runtime": "^6.9.2",
     "dva": "^2.1.0",
