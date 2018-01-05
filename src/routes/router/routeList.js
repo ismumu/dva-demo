@@ -38,6 +38,13 @@ const routeList = [
 		component: () => import('../typescript/demo2.tsx'),
 	},
 	{
+		path: '/typescript/markdown',
+		name: '使用markdown',
+		parentCode: 'typescript',
+		parentName: 'TypeScript',
+		component: () => import('../typescript/makrdown.tsx'),
+	},
+	{
 		path: '*',
 		parentCode: 'error',
 		component: () => import('../error/index'),
