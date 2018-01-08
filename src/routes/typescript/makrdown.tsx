@@ -31,9 +31,7 @@ class Markdown extends React.Component {
 			<div>
 				<ReactMarkdown source={ textContent } />
 				<SyntaxHighlighter language='javascript' style={dark}>
-					{
-						'(num) => num + 1'
-					}
+					{ `(num) => num + 1` }
 				</SyntaxHighlighter>
 			</div>
 		);
