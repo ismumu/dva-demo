@@ -56,10 +56,10 @@ const routeList = [
 	},
 	{
 		path: '/typescript/markdown',
-		name: '使用markdown',
+		name: 'interface 接口',
 		parentCode: 'typescript',
 		parentName: 'TypeScript',
-		component: () => import('../typescript/makrdown.tsx'),
+		component: () => import('../typescript/interface.tsx'),
 	},
 
 
