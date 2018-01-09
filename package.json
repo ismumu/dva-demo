@@ -19,9 +19,12 @@
     "mockjs": "^1.0.1-beta3",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
+    "react-dom-factories": "^1.0.2",
     "react-markdown": "^3.1.4",
     "react-syntax-highlighter": "^6.1.1",
-    "roadhog-api-doc": "^0.3.3"
+    "roadhog-api-doc": "^0.3.3",
+    "tf-ag-grid": "^13.3.1-4",
+    "tf-ag-grid-react": "^13.3.0-2"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",

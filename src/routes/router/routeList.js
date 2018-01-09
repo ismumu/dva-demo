@@ -7,6 +7,10 @@ const routeList = [
 		models: () => [import('../../models/index/index')],
 		component: () => import('../index/index'),
 	},
+
+
+
+
 	{
 		path: '/demo/getData',
 		name: '获取接口数据',
@@ -23,6 +27,19 @@ const routeList = [
 		models: () => [import('../../models/demo/importCommonComponents.js')],
 		component: () => import('../demo/importCommonComponents.js'),
 	},
+	{
+		path: '/demo/tf-ag-grid-react',
+		name: 'Ag-Grid',
+		parentCode: 'demo',
+		parentName: 'Demo',
+		models: () => [import('../../models/demo/tf-ag-grid-react.js')],
+		component: () => import('../demo/tf-ag-grid-react.js'),
+	},
+
+
+
+
+
 	{
 		path: '/typescript/demo1',
 		name: 'demo 1',
@@ -44,6 +61,10 @@ const routeList = [
 		parentName: 'TypeScript',
 		component: () => import('../typescript/makrdown.tsx'),
 	},
+
+
+
+
 	{
 		path: '*',
 		parentCode: 'error',
