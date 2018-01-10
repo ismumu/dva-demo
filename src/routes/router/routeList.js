@@ -55,11 +55,18 @@ const routeList = [
 		component: () => import('../typescript/demo2.tsx'),
 	},
 	{
-		path: '/typescript/markdown',
+		path: '/typescript/interface',
 		name: 'interface 接口',
 		parentCode: 'typescript',
 		parentName: 'TypeScript',
 		component: () => import('../typescript/interface.tsx'),
+	},
+	{
+		path: '/typescript/classes',
+		name: 'class 类',
+		parentCode: 'typescript',
+		parentName: 'TypeScript',
+		component: () => import('../typescript/classes.tsx'),
 	},
 
 

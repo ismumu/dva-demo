@@ -43,7 +43,7 @@ const App = ({
 				collapsed={ dvaDemoApp.collapsed }
 				onCollapse={ onCollapse }
 			>
-				<div className={styles.logo}>Dva-demo</div>
+				<div className={styles.logo}>ismumu</div>
 				<Menus pathname={dvaDemoApp.pathname} />
 			</Sider>
 
