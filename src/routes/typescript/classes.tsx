@@ -137,9 +137,6 @@ if (employee.fullName) {
 ];
 
 
-
-
-
 class Classes extends React.Component {
 
 	constructor (props) {
