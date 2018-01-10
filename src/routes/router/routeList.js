@@ -75,6 +75,13 @@ const routeList = [
 		parentName: 'TypeScript',
 		component: () => import('../typescript/functions.tsx'),
 	},
+	{
+		path: '/typescript/generics',
+		name: '泛型',
+		parentCode: 'typescript',
+		parentName: 'TypeScript',
+		component: () => import('../typescript/generics.tsx'),
+	},
 
 
 
