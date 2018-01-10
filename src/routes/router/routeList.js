@@ -27,17 +27,6 @@ const routeList = [
 		models: () => [import('../../models/demo/importCommonComponents.js')],
 		component: () => import('../demo/importCommonComponents.js'),
 	},
-	{
-		path: '/demo/tf-ag-grid-react',
-		name: 'Ag-Grid',
-		parentCode: 'demo',
-		parentName: 'Demo',
-		models: () => [import('../../models/demo/tf-ag-grid-react.js')],
-		component: () => import('../demo/tf-ag-grid-react.js'),
-	},
-
-
-
 
 
 	{
