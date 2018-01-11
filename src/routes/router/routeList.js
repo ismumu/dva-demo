@@ -13,12 +13,12 @@ const routeList = [
 
 
 	{
-		path: '/demo/getData',
-		name: '获取接口数据',
+		path: '/demo/index',
+		name: 'index',
 		parentCode: 'demo',
 		parentName: 'Demo',
-		models: () => [import('../../models/demo/getData')],
-		component: () => import('../demo/getData'),
+		// models: () => [import('../../models/demo/getData')],
+		component: () => import('../demo/index'),
 	},
 	{
 		path: '/demo/importCommonComponents',
@@ -91,6 +91,18 @@ const routeList = [
 		parentName: 'TypeScript',
 		component: () => import('../typescript/generics.tsx'),
 	},
+
+
+
+
+	{
+		path: '/nginx/spa-config',
+		name: '在nginx上部署单页面',
+		parentCode: 'nginx',
+		parentName: 'Nginx',
+		component: () => import('../nginx/spa.tsx'),
+	},
+
 
 
 
