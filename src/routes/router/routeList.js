@@ -1,6 +1,7 @@
 
 const routeList = [
-    {
+
+	{
 		path: '/',
 		name: '首页',
 		parentCode: 'index',
@@ -27,6 +28,25 @@ const routeList = [
 		models: () => [import('../../models/demo/importCommonComponents.js')],
 		component: () => import('../demo/importCommonComponents.js'),
 	},
+
+
+
+	{
+		path: '/es6/index',
+		name: 'index',
+		parentCode: 'es6',
+		parentName: 'ES6',
+		component: () => import('../es6/index.tsx'),
+	},
+	{
+		path: '/es6/symbol',
+		name: 'Symbol',
+		parentCode: 'es6',
+		parentName: 'ES6',
+		component: () => import('../es6/symbol.tsx'),
+	},
+
+
 
 
 	{

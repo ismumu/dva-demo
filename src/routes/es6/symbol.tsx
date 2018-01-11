@@ -1,0 +1,98 @@
+
+import * as React from 'react'
+import dva, { connect } from 'dva';
+
+
+const ReactMarkdown = require('react-markdown');
+
+
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { dark } from 'react-syntax-highlighter/styles/hljs';
+
+let codes = [
+`
+let mySymbol1 = Symbol();
+let mySymbol2 = Symbol();
+
+let myObj = {
+	a: 1,
+	b: 2,
+}
+
+myObj['mySymbol1'] = 1111;
+myObj['mySymbol2'] = 1222;
+
+console.log(myObj['mySymbol2'])
+`,
+
+`
+const mySymbol = Symbol();
+const a = {};
+
+a.mySymbol = 'Hello!';
+a[mySymbol] // undefined
+a['mySymbol'] // "Hello!"
+
+`,
+
+`
+let s1 = Symbol.for('foo');
+let s2 = Symbol.for('foo');
+
+console.log(s1 === s2) // true
+`
+
+]
+
+
+
+
+
+
+
+
+export default class Enums extends React.Component {
+
+	constructor (props) {
+		super(props)
+	}
+
+	render () {
+
+		const lang = 'javascript';
+
+		return (
+			<div>
+
+
+<ReactMarkdown source={`## Symbol`} />
+<SyntaxHighlighter language={lang} style={dark}>{ codes[0] }</SyntaxHighlighter>
+<ReactMarkdown source={`### 注意，Symbol 值作为对象属性名时，不能用点运算符。`} />
+<SyntaxHighlighter language={lang} style={dark}>{ codes[1] }</SyntaxHighlighter>
+<ReactMarkdown source={`上面代码中，因为点运算符后面总是字符串，所以不会读取mySymbol作为标识名所指代的那个值，导致a的属性名实际上是一个字符串，而不是一个 Symbol 值。`} />
+<SyntaxHighlighter language={lang} style={dark}>{ codes[2] }</SyntaxHighlighter>
+<SyntaxHighlighter language={lang} style={dark}>
+{`
+Symbol.for()与Symbol()这两种写法，都会生成新的 Symbol。它们的区别是，前者会被登记在全局环境中供搜索，后者不会。
+Symbol.for()不会每次调用就返回一个新的 Symbol 类型的值，而是会先检查给定的key是否已经存在，如果不存在才会新建一个值。
+比如，如果你调用Symbol.for("cat")30 次，每次都会返回同一个 Symbol 值，但是调用Symbol("cat")30 次，会返回 30 个不同的 Symbol 值。
+
+`}</SyntaxHighlighter>
+<ReactMarkdown source={`## Symbol.keyFor`} />
+
+<SyntaxHighlighter language={lang} style={dark}>
+{`
+let s1 = Symbol.for("foo");
+Symbol.keyFor(s1) // "foo"
+
+let s2 = Symbol("foo");
+Symbol.keyFor(s2) // undefined
+
+`}</SyntaxHighlighter>
+
+
+
+			</div>
+		);
+	}
+}

@@ -4,6 +4,11 @@ import dva, { connect } from 'dva';
 import styles from './index.css';
 
 
+import Canvas from './canvas';
+
+
+// images
+import logo_wb from '../../assets/images/wb-02.jpg';
 
 class IndexPage extends React.Component {
 
@@ -12,12 +17,29 @@ class IndexPage extends React.Component {
 	}
 
 
+	componentDidMount (){
+		Canvas(this.canvas);
+	}
+
 	render () {
 
 		const { dispatch, modelsIndex } = this.props;
 
 		return (
-			<div>welcome to index page.</div>
+			<div className={styles.body}>
+				<canvas id="canvas" ref={node => this.canvas = node}></canvas>
+
+				<div className={styles.homeContent}>
+					<div className={styles.logoWrap}><img className={styles.logo} src={logo_wb} alt="logo"/></div>
+					<h1>ismumu</h1>
+					<nav>
+						<a href="/demo/getData">Blogs</a>
+						<a href="https://github.com/ismumu" target="_blank">GitHub</a>
+						<a href="https://www.facebook.com/imumumumu" target="_blank">Facebook</a>
+						<a href="http://t.qq.com/Jnanke" target="_blank">Weibo</a>
+					</nav>
+				</div>
+			</div>
 		);
 	}
 }

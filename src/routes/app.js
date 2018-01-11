@@ -15,7 +15,10 @@ const { Header, Content, Footer, Sider } = Layout;
 
 
 
-import Menus from '../components/menu/menu'
+import Menus from '../components/menu/menu';
+
+
+import IndexPage from './index/index';
 
 
 
@@ -35,50 +38,45 @@ const App = ({
 		})
 	}
 
+	if ( location.pathname !== '/' ) {
+		return (
+			<Layout className={styles.layout}>
+				<Sider
+					collapsible
+					collapsed={ dvaDemoApp.collapsed }
+					onCollapse={ onCollapse }
+				>
+					<div className={styles.logo}>ismumu</div>
+					<Menus pathname={dvaDemoApp.pathname} />
+				</Sider>
 
-	return (
-		<Layout className={styles.layout}>
-			<Sider
-				collapsible
-				collapsed={ dvaDemoApp.collapsed }
-				onCollapse={ onCollapse }
-			>
-				<div className={styles.logo}>ismumu</div>
-				<Menus pathname={dvaDemoApp.pathname} />
-			</Sider>
+				<Layout>
+					<Header className={styles.header}>
 
-			<Layout>
-				<Header className={styles.header}>
+						<Icon
+							className={styles.trigger}
+							type={dvaDemoApp.collapsed ? 'menu-unfold' : 'menu-fold'}
+							onClick={ onCollapse }
+							/>
+					</Header>
 
-					<Icon
-						className={styles.trigger}
-						type={dvaDemoApp.collapsed ? 'menu-unfold' : 'menu-fold'}
-						onClick={ onCollapse }
-						/>
-				</Header>
-
-				<Content className={styles.contentWrap}>
-					<div className={styles.content}>
-						{children}
-					</div>
-				</Content>
-				<Footer className={styles.footer} >Ant Design ©2016 Created by Ant UED</Footer>
+					<Content className={styles.contentWrap}>
+						<div className={styles.content}>
+							{children}
+						</div>
+					</Content>
+					<Footer className={styles.footer} >Ant Design ©2016 Created by Ant UED</Footer>
+				</Layout>
 			</Layout>
-		</Layout>
-	);
+		)
+	} else {
+		// index add hidden
+		// var body = document.getElementsByTagName('body')[0];
+		// body.style.overflow = 'hidden';
+
+		return <IndexPage></IndexPage>
+	}
+
 }
 
-
-
-// export default App;
 export default withRouter(connect(({dvaDemoApp}) => ({dvaDemoApp}))(App));
-
-// export default withRouter(connect(({ app, loading }) => ({ app, loading }))(App))
-// export default withRouter(connect(({ app, loading }) => {
-
-// 	// console.log(app);
-
-// 	return {
-// 		app, loading
-// 	}
-// })(App))
