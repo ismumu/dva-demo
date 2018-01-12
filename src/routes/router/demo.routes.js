@@ -8,6 +8,15 @@ const DemoRoutes = [
 		component: () => import('../demo/index'),
 	},
 	{
+		path: '/demo/getData',
+		name: 'data',
+		isShow: false, // 是否展示到menu上面
+		parentCode: 'demo',
+		parentName: 'Demo',
+		models: () => [import('../../models/demo/getData')],
+		component: () => import('../demo/getData'),
+	},
+	{
 		path: '/demo/importCommonComponents',
 		name: '引入公共组件',
 		parentCode: 'demo',

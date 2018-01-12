@@ -24,9 +24,6 @@ class Menus extends React.Component {
 		super(props)
 	}
 
-
-
-
 	render () {
 
 		// 根据url默认选中展开项
@@ -37,6 +34,9 @@ class Menus extends React.Component {
 		// 组装数据
 		let dataObj = {}
 		routeList.map((obj, key) => {
+
+			// 如果设置了不显示，在不添加到menu上
+			if ( obj.isShow === false ) { return; };
 
 			let code = obj.parentCode;
 			dataObj[code] = [...(dataObj[code] || []), obj];
