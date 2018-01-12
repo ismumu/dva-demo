@@ -10,7 +10,6 @@ import routeList from './routeList';
 
 
 function RouterConfig({ history, app }) {
-
 	return (
 		<Router history={history}>
 			<App>

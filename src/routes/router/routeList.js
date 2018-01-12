@@ -10,7 +10,14 @@ import ErrorRoutes from './error.routes';
 
 
 
+const routeList = [].concat(
+	IndexRoutes,
+	DemoRoutes,
+	Es6Routes,
+	TsRoutes,
+	NginxRoutes,
+	ErrorRoutes,
+);
 
-const routeList = [].concat(IndexRoutes, DemoRoutes, Es6Routes, TsRoutes, NginxRoutes, ErrorRoutes);
 
 export default routeList;
