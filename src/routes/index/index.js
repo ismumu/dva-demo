@@ -1,5 +1,6 @@
 import React from 'react';
 import dva, { connect } from 'dva';
+import { Link } from 'dva/router';
 
 import styles from './index.css';
 
@@ -33,7 +34,7 @@ class IndexPage extends React.Component {
 					<div className={styles.logoWrap}><img className={styles.logo} src={logo_wb} alt="logo"/></div>
 					<h1>ismumu</h1>
 					<nav>
-						<a href="/demo/index">Blogs</a>
+						<Link to="/demo/index">Blogs</Link>
 						<a href="https://github.com/ismumu" target="_blank">GitHub</a>
 						<a href="https://www.facebook.com/imumumumu" target="_blank">Facebook</a>
 						<a href="http://t.qq.com/Jnanke" target="_blank">Weibo</a>

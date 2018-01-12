@@ -21,6 +21,9 @@ import Menus from '../components/menu/menu';
 import IndexPage from './index/index';
 
 
+import ghs from '../assets/images/ghs.png';
+
+
 
 const App = ({
 	children,
@@ -65,15 +68,11 @@ const App = ({
 							{children}
 						</div>
 					</Content>
-					<Footer className={styles.footer} >Ant Design ©2016 Created by Ant UED</Footer>
+					<Footer className={styles.footer} ><img src={ghs} alt="ghs" /> 浙公网安备 33010402001108号</Footer>
 				</Layout>
 			</Layout>
 		)
 	} else {
-		// index add hidden
-		// var body = document.getElementsByTagName('body')[0];
-		// body.style.overflow = 'hidden';
-
 		return <IndexPage></IndexPage>
 	}
 
