@@ -28,6 +28,13 @@ const Es6Routes = [
 		parentName: 'ES6',
 		component: () => import('../es6/number.tsx'),
 	},
+	{
+		path: '/es6/function',
+		name: 'function',
+		parentCode: 'es6',
+		parentName: 'ES6',
+		component: () => import('../es6/function.tsx'),
+	},
 ]
 
 export default Es6Routes;
