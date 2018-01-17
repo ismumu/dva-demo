@@ -21,6 +21,13 @@ const Es6Routes = [
 		parentName: 'ES6',
 		component: () => import('../es6/yield.tsx'),
 	},
+	{
+		path: '/es6/number',
+		name: 'number',
+		parentCode: 'es6',
+		parentName: 'ES6',
+		component: () => import('../es6/number.tsx'),
+	},
 ]
 
 export default Es6Routes;
