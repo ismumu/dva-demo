@@ -47,6 +47,34 @@ Number('0b111')  // 7
 Number('0o10')  // 8
 
 `}</SyntaxHighlighter>
+<ReactMarkdown source={`
+# 指数运算符
+
+ES2016 新增了一个指数运算符（**）。
+
+`} />
+<SyntaxHighlighter language={lang} style={github}>
+{`
+2 ** 2 // 4
+2 ** 3 // 8
+
+`}</SyntaxHighlighter>
+<ReactMarkdown source={`
+指数运算符可以与等号结合，形成一个新的赋值运算符（**=）。
+
+`} />
+<SyntaxHighlighter language={lang} style={github}>
+{`
+let a = 1.5;
+a **= 2;
+// 等同于 a = a * a;
+
+let b = 4;
+b **= 3;
+// 等同于 b = b * b * b;
+
+`}</SyntaxHighlighter>
+
 
 
 			</div>
