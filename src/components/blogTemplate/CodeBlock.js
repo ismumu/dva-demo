@@ -1,8 +1,9 @@
 const React = require('react')
 const PropTypes = require('prop-types')
 
-
-const hljs = window.hljs
+// highlight
+import hljs from './highlight.9.11.0.github';
+import './highlight.9.11.0.github.less';
 
 class CodeBlock extends React.PureComponent {
   constructor(props) {
