@@ -6,45 +6,46 @@ import hljs from './highlight.9.11.0.github';
 import './highlight.9.11.0.github.less';
 
 class CodeBlock extends React.PureComponent {
-  constructor(props) {
-    super(props)
-    this.setRef = this.setRef.bind(this)
-  }
 
-  setRef(el) {
-    this.codeEl = el
-  }
+	constructor(props) {
+		super(props)
+		this.setRef = this.setRef.bind(this)
+	}
 
-  componentDidMount() {
-    this.highlightCode()
-  }
+	setRef(el) {
+		this.codeEl = el
+	}
 
-  componentDidUpdate() {
-    this.highlightCode()
-  }
+	componentDidMount() {
+		this.highlightCode()
+	}
 
-  highlightCode() {
-    hljs.highlightBlock(this.codeEl)
-  }
+	componentDidUpdate() {
+		this.highlightCode()
+	}
 
-  render() {
-    return (
-      <pre>
-        <code ref={this.setRef} className={this.props.language}>
-          {this.props.value}
-        </code>
-      </pre>
-    )
-  }
+	highlightCode() {
+		hljs.highlightBlock(this.codeEl)
+	}
+
+	render() {
+		return (
+			<pre>
+				<code ref={this.setRef} className={this.props.language}>
+					{this.props.value}
+				</code>
+			</pre>
+		)
+	}
 }
 
 CodeBlock.defaultProps = {
-  language: ''
+	language: ''
 }
 
 CodeBlock.propTypes = {
-  value: PropTypes.string.isRequired,
-  language: PropTypes.string
+	value: PropTypes.string.isRequired,
+	language: PropTypes.string
 }
 
 // module.exports = CodeBlock
