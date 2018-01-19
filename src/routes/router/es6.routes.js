@@ -42,6 +42,13 @@ const Es6Routes = [
 		parentName: 'ES6',
 		component: () => import('../es6/array.tsx'),
 	},
+	{
+		path: '/es6/object',
+		name: 'object',
+		parentCode: 'es6',
+		parentName: 'ES6',
+		component: () => import('../es6/object.tsx'),
+	},
 ]
 
 export default Es6Routes;
