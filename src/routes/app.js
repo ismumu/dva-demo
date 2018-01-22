@@ -22,18 +22,12 @@ const { Header, Content, Footer, Sider } = Layout;
 
 
 import Menus from '../components/menu/menu';
-
-
 import IndexPage from './index/index';
-
-
 import ghs from '../assets/images/ghs.png';
 
-import { setTimeout } from 'timers';
 
 
 
-let currHref = '';
 let progressIndicatorDom = '';
 
 
@@ -41,36 +35,26 @@ class App extends React.Component {
 
 	constructor ( props ) {
 		super (props);
-
-
 	}
-
-// const App = ({
-// 	children,
-// 	dispatch,
-// 	dvaDemoApp,
-// 	location,
-// 	loading,
-// }) => {
-
 
 	componentDidMount () {
 
 		// top scroll progress indicatorDom
-		$(function(){
-			var $w = $(window);
-			var $prog = $(progressIndicatorDom);
-			var wh = $w.height();
-			var h = $('.ant-layout').height();
-			var sHeight = h - wh;
 
-			$w.on('scroll', function() {
-				window.requestAnimationFrame(function(){
-					var perc = Math.max(0, Math.min(1, $w.scrollTop() / sHeight));
-					$prog.css({width: perc * 100 + '%'});
-				});
-			});
-		})
+		// $(function(){
+		// 	var $w = $(window);
+		// 	var $prog = $(progressIndicatorDom);
+		// 	var wh = $w.height();
+		// 	var h = $('.ant-layout').height();
+		// 	var sHeight = h - wh;
+
+		// 	$w.on('scroll', function() {
+		// 		window.requestAnimationFrame(function(){
+		// 			var perc = Math.max(0, Math.min(1, $w.scrollTop() / sHeight));
+		// 			$prog.css({width: perc * 100 + '%'});
+		// 		});
+		// 	});
+		// })
 
 
 	}
@@ -94,6 +78,7 @@ class App extends React.Component {
 		const { dvaDemoApp, children, location, loading } = this.props;
 
 		// NProgress
+		let currHref = '';
 		const href = window.location.href;
 		if (currHref !== href) {
 			NProgress.start();
@@ -131,7 +116,7 @@ class App extends React.Component {
 								{children}
 							</div>
 						</Content>
-						<Footer className={styles.footer} ><img src={ghs} alt="ghs" /> 浙公网安备 33010402001108号</Footer>
+						<Footer className={styles.footer} ><img src={ghs} alt="ghs" />浙公网安备 33010402001108号</Footer>
 					</Layout>
 					<div className={styles.progressIndicator} ref={ (node) => { this.updateNode(node) } }></div>
 				</Layout>

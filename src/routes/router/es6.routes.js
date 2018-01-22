@@ -49,6 +49,13 @@ const Es6Routes = [
 		parentName: 'ES6',
 		component: () => import('../es6/object.tsx'),
 	},
+	{
+		path: '/es6/set-map',
+		name: 'Set 和 Map',
+		parentCode: 'es6',
+		parentName: 'ES6',
+		component: () => import('../es6/set-map.tsx'),
+	},
 ]
 
 export default Es6Routes;

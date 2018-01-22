@@ -16,7 +16,6 @@
     "dva": "^2.1.0",
     "dva-loading": "^1.0.4",
     "dva-nprogress": "^0.0.4",
-    "jquery": "^3.3.1",
     "keymaster": "^1.6.2",
     "mockjs": "^1.0.1-beta3",
     "nprogress": "^0.2.0",
