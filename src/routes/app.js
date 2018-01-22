@@ -31,33 +31,35 @@ import ghs from '../assets/images/ghs.png';
 
 import { setTimeout } from 'timers';
 
+
+
 let currHref = '';
+let progressIndicatorDom = '';
 
-const App = ({
-	children,
-	dispatch,
-	dvaDemoApp,
-	location,
-	loading,
-}) => {
 
-	// NProgress
-    const href = window.location.href;
-    if (currHref !== href) {
-		NProgress.start();
-		// loading.global 为 false 时表示加载完毕
-        if (!loading.global) {
-            NProgress.done();
-            currHref = href;
-        }
+class App extends React.Component {
+
+	constructor ( props ) {
+		super (props);
+
+
 	}
 
+// const App = ({
+// 	children,
+// 	dispatch,
+// 	dvaDemoApp,
+// 	location,
+// 	loading,
+// }) => {
 
-	// top scroll progress-indicator
-	const progressIndicator = (dom) => {
-		setTimeout(function () {
+
+	componentDidMount () {
+
+		// top scroll progress indicatorDom
+		$(function(){
 			var $w = $(window);
-			var $prog = $(dom);
+			var $prog = $(progressIndicatorDom);
 			var wh = $w.height();
 			var h = $('.ant-layout').height();
 			var sHeight = h - wh;
@@ -68,11 +70,17 @@ const App = ({
 					$prog.css({width: perc * 100 + '%'});
 				});
 			});
-		},2000)
+		})
+
+
 	}
 
+	updateNode = (node) => {
+		progressIndicatorDom = node;
+	}
 
-	const onCollapse = () => {
+	onCollapse = () => {
+		const { dvaDemoApp, dispatch } = this.props;
 		dispatch({
 			type: 'dvaDemoApp/updateState',
 			payload: {
@@ -81,41 +89,56 @@ const App = ({
 		})
 	}
 
+	render () {
 
-	if ( location.pathname !== '/' ) {
-		return (
-			<Layout className={styles.layout}>
-				<Sider
-					collapsible
-					collapsed={ dvaDemoApp.collapsed }
-					onCollapse={ onCollapse }
-				>
-					<div className={styles.logo}>ismumu</div>
-					<Menus pathname={dvaDemoApp.pathname} />
-				</Sider>
+		const { dvaDemoApp, children, location, loading } = this.props;
 
-				<Layout>
-					<Header className={styles.header}>
+		// NProgress
+		const href = window.location.href;
+		if (currHref !== href) {
+			NProgress.start();
+			// loading.global 为 false 时表示加载完毕
+			if (!loading.global) {
+				NProgress.done();
+				currHref = href;
+			}
+		}
 
-						<Icon
-							className={styles.trigger}
-							type={dvaDemoApp.collapsed ? 'menu-unfold' : 'menu-fold'}
-							onClick={ onCollapse }
-							/>
-					</Header>
+		if ( location.pathname !== '/' ) {
+			return (
+				<Layout className={styles.layout}>
+					<Sider
+						collapsible
+						collapsed={ dvaDemoApp.collapsed }
+						onCollapse={ this.onCollapse }
+					>
+						<div className={styles.logo}>ismumu</div>
+						<Menus pathname={dvaDemoApp.pathname} />
+					</Sider>
 
-					<Content className={styles.contentWrap}>
-						<div className={styles.content}>
-							{children}
-						</div>
-					</Content>
-					<Footer className={styles.footer} ><img src={ghs} alt="ghs" /> 浙公网安备 33010402001108号</Footer>
+					<Layout>
+						<Header className={styles.header}>
+
+							<Icon
+								className={styles.trigger}
+								type={dvaDemoApp.collapsed ? 'menu-unfold' : 'menu-fold'}
+								onClick={ this.onCollapse }
+								/>
+						</Header>
+
+						<Content className={styles.contentWrap}>
+							<div className={styles.content}>
+								{children}
+							</div>
+						</Content>
+						<Footer className={styles.footer} ><img src={ghs} alt="ghs" /> 浙公网安备 33010402001108号</Footer>
+					</Layout>
+					<div className={styles.progressIndicator} ref={ (node) => { this.updateNode(node) } }></div>
 				</Layout>
-				<div className={styles.progressIndicator} ref={ (node) => {progressIndicator(node)} }></div>
-			</Layout>
-		)
-	} else {
-		return <IndexPage></IndexPage>
+			)
+		} else {
+			return <IndexPage></IndexPage>
+		}
 	}
 
 }
