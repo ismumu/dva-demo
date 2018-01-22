@@ -9,8 +9,8 @@ const DemoRoutes = [
 	},
 	{
 		path: '/demo/getData',
-		name: 'data',
-		isShow: false, // 是否展示到menu上面
+		name: 'get data',
+		isShow: true, // 是否展示到menu上面
 		parentCode: 'demo',
 		parentName: 'Demo',
 		models: () => [import('../../models/demo/getData')],

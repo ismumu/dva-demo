@@ -21,7 +21,7 @@ const app = dva({
 });
 
 // 2. Plugins
-// app.use({});
+app.use(createLoading());
 app.use(nprogressDva());
 
 // 3. Model

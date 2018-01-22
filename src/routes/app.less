@@ -46,3 +46,20 @@
 .trigger:hover {
 	color: #1890ff;
 }
+
+
+// nprogress color setting
+:global {
+	@nprogressColor: #1890ff;
+	#nprogress .bar {
+		background: @nprogressColor;
+	}
+	#nprogress .peg {
+		box-shadow: 0 0 10px @nprogressColor, 0 0 5px @nprogressColor;
+	}
+
+	#nprogress .spinner-icon {
+		border-top-color: @nprogressColor;
+		border-left-color: @nprogressColor;
+	}
+}

@@ -3,7 +3,12 @@ import dva, { connect } from 'dva';
 import { Link, withRouter } from 'dva/router';
 
 
-import styles from './app.css';
+// nprogress
+import 'nprogress/nprogress.css'
+import NProgress from 'nprogress';
+
+
+import styles from './app.less';
 
 
 import {
@@ -23,14 +28,25 @@ import IndexPage from './index/index';
 
 import ghs from '../assets/images/ghs.png';
 
-
+let currHref = '';
 
 const App = ({
 	children,
 	dispatch,
 	dvaDemoApp,
 	location,
+	loading,
 }) => {
+
+    const href = window.location.href;
+    if (currHref !== href) {
+		NProgress.start();
+		// loading.global 为 false 时表示加载完毕
+        if (!loading.global) {
+            NProgress.done();
+            currHref = href;
+        }
+    }
 
 	const onCollapse = () => {
 		dispatch({
@@ -40,6 +56,7 @@ const App = ({
 			}
 		})
 	}
+
 
 	if ( location.pathname !== '/' ) {
 		return (
@@ -78,4 +95,4 @@ const App = ({
 
 }
 
-export default withRouter(connect(({dvaDemoApp}) => ({dvaDemoApp}))(App));
+export default withRouter(connect(({dvaDemoApp, loading}) => ({dvaDemoApp, loading}))(App));

@@ -18,6 +18,7 @@
     "dva-nprogress": "^0.0.4",
     "keymaster": "^1.6.2",
     "mockjs": "^1.0.1-beta3",
+    "nprogress": "^0.2.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-dom-factories": "^1.0.2",
