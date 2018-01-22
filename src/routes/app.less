@@ -1,3 +1,7 @@
+// nprogress color setting
+@nprogressColor: #1890ff;
+
+
 .layout {
 	min-height: 100vh;
 }
@@ -48,9 +52,18 @@
 }
 
 
-// nprogress color setting
+// top scroll progress-indicator
+.progressIndicator {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 3px;
+	background-color: @nprogressColor;
+}
+
+
 :global {
-	@nprogressColor: #1890ff;
+
 	#nprogress .bar {
 		background: @nprogressColor;
 	}
@@ -62,4 +75,5 @@
 		border-top-color: @nprogressColor;
 		border-left-color: @nprogressColor;
 	}
+
 }

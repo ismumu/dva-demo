@@ -2,6 +2,7 @@ import React from 'react';
 import dva, { connect } from 'dva';
 import { Link, withRouter } from 'dva/router';
 
+import $ from "jquery";
 
 // nprogress
 import 'nprogress/nprogress.css'
@@ -28,6 +29,8 @@ import IndexPage from './index/index';
 
 import ghs from '../assets/images/ghs.png';
 
+import { setTimeout } from 'timers';
+
 let currHref = '';
 
 const App = ({
@@ -38,6 +41,7 @@ const App = ({
 	loading,
 }) => {
 
+	// NProgress
     const href = window.location.href;
     if (currHref !== href) {
 		NProgress.start();
@@ -46,7 +50,27 @@ const App = ({
             NProgress.done();
             currHref = href;
         }
-    }
+	}
+
+
+	// top scroll progress-indicator
+	const progressIndicator = (dom) => {
+		setTimeout(function () {
+			var $w = $(window);
+			var $prog = $(dom);
+			var wh = $w.height();
+			var h = $('.ant-layout').height();
+			var sHeight = h - wh;
+
+			$w.on('scroll', function() {
+				window.requestAnimationFrame(function(){
+					var perc = Math.max(0, Math.min(1, $w.scrollTop() / sHeight));
+					$prog.css({width: perc * 100 + '%'});
+				});
+			});
+		},2000)
+	}
+
 
 	const onCollapse = () => {
 		dispatch({
@@ -87,6 +111,7 @@ const App = ({
 					</Content>
 					<Footer className={styles.footer} ><img src={ghs} alt="ghs" /> 浙公网安备 33010402001108号</Footer>
 				</Layout>
+				<div className={styles.progressIndicator} ref={ (node) => {progressIndicator(node)} }></div>
 			</Layout>
 		)
 	} else {
