@@ -56,6 +56,13 @@ const Es6Routes = [
 		parentName: 'ES6',
 		component: () => import('../es6/set-map.tsx'),
 	},
+	{
+		path: '/es6/promise',
+		name: 'Promise 对象',
+		parentCode: 'es6',
+		parentName: 'ES6',
+		component: () => import('../es6/promise.tsx'),
+	},
 ]
 
 export default Es6Routes;
