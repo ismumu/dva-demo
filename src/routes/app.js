@@ -28,9 +28,8 @@ import ghs from '../assets/images/ghs.png';
 
 
 
-
-let progressIndicatorDom = '';
-
+let currHref = '';
+// let progressIndicatorDom = '';
 
 class App extends React.Component {
 
@@ -65,7 +64,7 @@ class App extends React.Component {
 	}
 
 	updateNode = (node) => {
-		progressIndicatorDom = node;
+		// progressIndicatorDom = node;
 	}
 
 	onCollapse = () => {
@@ -84,7 +83,7 @@ class App extends React.Component {
 		const { dvaDemoApp, children, location, loading } = this.props;
 
 		// NProgress
-		let currHref = '';
+		// console.log('--------NProgress-----')
 		const href = window.location.href;
 		if (currHref !== href) {
 			NProgress.start();

@@ -10,7 +10,6 @@ export default {
 		text: 'aaaaaa',
 		algin: '',
 		dataSource: [],
-		showLoading: false,
 	},
 
 	subscriptions: {
@@ -22,6 +21,7 @@ export default {
 		* getData(action, { call, put }) {
 
 			const data = yield call(getDataApi);
+
 			yield put({
 				type: 'querySuccess',
 				payload: data,
@@ -36,7 +36,7 @@ export default {
 		querySuccess ( state, action ) {
 
 			// 给返回的数据追加随机key
-			action.payload.data.list.map((obj) => {
+			action.payload.data.map((obj) => {
 
 				let key = Math.random().toString(36).substr(2);
 
@@ -45,10 +45,11 @@ export default {
 
 			})
 
+
+
 			return {
 				...state,
-				dataSource: state.dataSource.concat(action.payload.data.list),
-				showLoading: false,
+				dataSource: state.dataSource.concat(action.payload.data),
 			}
 		},
 

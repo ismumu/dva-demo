@@ -9,19 +9,19 @@ import styles from './getData.less';
 
 
 
-  const columns = [{
+const columns = [{
 	title: '姓名',
 	dataIndex: 'name',
 	key: 'name',
-  }, {
-	title: '年龄',
-	dataIndex: 'age',
-	key: 'age',
-  }, {
+}, {
+	title: '邮件',
+	dataIndex: 'email',
+	key: 'email',
+}, {
 	title: '住址',
 	dataIndex: 'address',
 	key: 'address',
-  }];
+}];
 
 
 
@@ -39,9 +39,6 @@ class GetData extends React.Component {
 
 		dispatch({
 			type: 'getdata/updateState',
-			payload: {
-				showLoading: true,
-			}
 		})
 
 
@@ -55,7 +52,8 @@ class GetData extends React.Component {
 
 	render () {
 
-		const { dispatch, getdata } = this.props;
+		const { dispatch, getdata, loading } = this.props;
+		const isLoading = loading.effects['getdata/getData'];
 
 		return (
 			<div>
@@ -63,15 +61,18 @@ class GetData extends React.Component {
 					className={styles.table}
 					dataSource={getdata.dataSource}
 					columns={columns}
-					loading={getdata.showLoading}
+					loading={isLoading}
 					locale={{
 						emptyText: '暂无数据',
+					}}
+					pagination={{
+						pageSize: 5,
 					}}
 				/>
 				<Button
 					onClick={this.getData}
 					type="primary"
-					loading={getdata.showLoading}
+					loading={isLoading}
 				>点击加载数据</Button>
 			</div>
 		)
@@ -81,4 +82,4 @@ class GetData extends React.Component {
 
 }
 
-export default connect(({getdata}) => ({getdata}))(GetData);
+export default connect(({getdata, loading}) => ({getdata, loading}))(GetData);
