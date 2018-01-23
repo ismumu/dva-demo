@@ -1,6 +1,6 @@
 
 
-import { getDataApi } from '../../services/demo/getData';
+import { getDataApi, getMockDataApi } from '../../services/demo/getData';
 
 
 
@@ -26,6 +26,14 @@ export default {
 				type: 'querySuccess',
 				payload: data,
 			})
+
+		},
+
+		* getMockData(action, { call, put }) {
+
+			const data = yield call(getMockDataApi);
+
+			// console.log(data);
 
 		}
 

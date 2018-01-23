@@ -83,11 +83,11 @@ class App extends React.Component {
 		const { dvaDemoApp, children, location, loading } = this.props;
 
 		// NProgress
-		// console.log('--------NProgress-----')
 		const href = window.location.href;
 		if (currHref !== href) {
 			NProgress.start();
 			// loading.global 为 false 时表示加载完毕
+			console.log(loading)
 			if (!loading.global) {
 				NProgress.done();
 				currHref = href;
@@ -121,6 +121,7 @@ class App extends React.Component {
 								{children}
 							</div>
 						</Content>
+
 						<Footer className={styles.footer} ><img src={ghs} alt="ghs" />浙公网安备 33010402001108号</Footer>
 					</Layout>
 					<BackTop />

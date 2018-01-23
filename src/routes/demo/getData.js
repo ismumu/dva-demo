@@ -31,6 +31,15 @@ class GetData extends React.Component {
 
 	constructor (props) {
 		super(props)
+
+		// props.loading.global = true;
+		props.dispatch({
+			type: 'getdata/getMockData',
+			payload: {
+				loading: true,
+			}
+		})
+
 	}
 
 
