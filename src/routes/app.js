@@ -15,6 +15,7 @@ import styles from './app.less';
 import {
 	Layout,
 	Icon,
+	BackTop,
 } from 'antd';
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -37,6 +38,10 @@ class App extends React.Component {
 		super (props);
 	}
 
+	componentDidUpdate () {
+		// router更新后返回页面顶部
+		window.scrollTo(0, 0);
+	}
 	componentDidMount () {
 
 		// top scroll progress indicatorDom
@@ -64,6 +69,7 @@ class App extends React.Component {
 	}
 
 	onCollapse = () => {
+		// 折叠左侧菜单
 		const { dvaDemoApp, dispatch } = this.props;
 		dispatch({
 			type: 'dvaDemoApp/updateState',
@@ -118,6 +124,7 @@ class App extends React.Component {
 						</Content>
 						<Footer className={styles.footer} ><img src={ghs} alt="ghs" />浙公网安备 33010402001108号</Footer>
 					</Layout>
+					<BackTop />
 					<div className={styles.progressIndicator} ref={ (node) => { this.updateNode(node) } }></div>
 				</Layout>
 			)
