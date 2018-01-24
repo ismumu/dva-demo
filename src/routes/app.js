@@ -39,6 +39,8 @@ class App extends React.Component {
 
 	componentDidMount () {
 
+
+
 		// top scroll progress indicatorDom
 
 		// $(function(){
@@ -59,6 +61,8 @@ class App extends React.Component {
 
 	}
 
+
+
 	componentWillUpdate () {
 		// router更新后返回页面顶部
 		window.scrollTo(0, 0);
@@ -71,8 +75,10 @@ class App extends React.Component {
 		if ( !loading.global ) {
 			NProgress.done();
 		}
-	}
 
+		console.log(11111)
+
+	}
 
 	updateNode = (node) => {
 		// progressIndicatorDom = node;
