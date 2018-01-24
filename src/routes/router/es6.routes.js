@@ -63,6 +63,13 @@ const Es6Routes = [
 		parentName: 'ES6',
 		component: () => import('../es6/promise.tsx'),
 	},
+	{
+		path: '/es6/generator',
+		name: 'Generator',
+		parentCode: 'es6',
+		parentName: 'ES6',
+		component: () => import('../es6/generator.tsx'),
+	},
 ]
 
 export default Es6Routes;
