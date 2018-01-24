@@ -28,7 +28,7 @@ import ghs from '../assets/images/ghs.png';
 
 
 
-let currHref = '';
+
 // let progressIndicatorDom = '';
 
 class App extends React.Component {
@@ -63,6 +63,18 @@ class App extends React.Component {
 
 	}
 
+	componentWillUpdate () {
+		NProgress.start();
+	}
+
+	componentDidUpdate () {
+		const { loading } = this.props;
+		if ( !loading.global ) {
+			NProgress.done();
+		}
+	}
+
+
 	updateNode = (node) => {
 		// progressIndicatorDom = node;
 	}
@@ -81,18 +93,6 @@ class App extends React.Component {
 	render () {
 
 		const { dvaDemoApp, children, location, loading } = this.props;
-
-		// NProgress
-		const href = window.location.href;
-		if (currHref !== href) {
-			NProgress.start();
-			// loading.global 为 false 时表示加载完毕
-			console.log(loading)
-			if (!loading.global) {
-				NProgress.done();
-				currHref = href;
-			}
-		}
 
 		if ( location.pathname !== '/' ) {
 			return (
