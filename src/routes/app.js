@@ -37,10 +37,6 @@ class App extends React.Component {
 		super (props);
 	}
 
-	componentDidUpdate () {
-		// router更新后返回页面顶部
-		window.scrollTo(0, 0);
-	}
 	componentDidMount () {
 
 		// top scroll progress indicatorDom
@@ -64,6 +60,9 @@ class App extends React.Component {
 	}
 
 	componentWillUpdate () {
+		// router更新后返回页面顶部
+		window.scrollTo(0, 0);
+
 		NProgress.start();
 	}
 
