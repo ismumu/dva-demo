@@ -70,6 +70,13 @@ const Es6Routes = [
 		parentName: 'ES6',
 		component: () => import('../es6/generator.tsx'),
 	},
+	{
+		path: '/es6/async',
+		name: 'async',
+		parentCode: 'es6',
+		parentName: 'ES6',
+		component: () => import('../es6/async.tsx'),
+	},
 ]
 
 export default Es6Routes;
