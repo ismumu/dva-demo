@@ -7,6 +7,13 @@ const NginxRoutes = [
 		parentName: 'Nginx',
 		component: () => import('../nginx/spa.tsx'),
 	},
+	{
+		path: '/nginx/gzip',
+		name: 'Nginx开启gzip',
+		parentCode: 'nginx',
+		parentName: 'Nginx',
+		component: () => import('../nginx/gzip.tsx'),
+	},
 ]
 
 export default NginxRoutes;
