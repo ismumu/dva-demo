@@ -1,19 +1,12 @@
-
 import * as React from 'react'
-import dva, { connect } from 'dva';
+import * as BlogTemplate from '../../components/blogTemplate/index';
 
 
-const ReactMarkdown = require('react-markdown');
-
-
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/styles/hljs';
-
-let codes = [
+const source =
 `
-Nginx配置如下
-`,
-`
+### Nginx配置如下
+
+\`\`\`js
 server {
 	listen  80;
 	server_name ismumu.com;
@@ -22,27 +15,17 @@ server {
 		root /www/dva-demo/dist;
 	}
 }
-`
-]
+\`\`\`
+`;
 
+export default class extends React.Component {
 
-
-
-export default class ES6 extends React.Component {
-
-	constructor (props) {
+	constructor(props) {
 		super(props)
 	}
 
-	render () {
-
-		const lang = 'javascript';
-
-		return (
-			<div>
-				<ReactMarkdown source={codes[0]} />
-				<SyntaxHighlighter language={lang} style={dark}>{ codes[1] }</SyntaxHighlighter>
-			</div>
-		);
+	render() {
+		return <BlogTemplate source={source} />;
 	}
+
 }

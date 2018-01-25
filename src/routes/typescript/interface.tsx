@@ -1,18 +1,11 @@
-
 import * as React from 'react'
-import dva, { connect } from 'dva';
+import * as BlogTemplate from '../../components/blogTemplate/index';
 
 
-const ReactMarkdown = require('react-markdown');
-
-
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/styles/hljs';
-
-
-
-const code = [
+const source =
 `
+## 接口初探
+\`\`\`
 function printLabel(labelledObj: { label: string, size: number }) {
 	console.log(labelledObj.label);
 }
@@ -23,10 +16,8 @@ let my = {
 }
 
 printLabel(my);
-
-`,
-
-`
+\`\`\`
+\`\`\`
 interface LabelledVal {
 	label: string;
 	size: number;
@@ -43,8 +34,9 @@ let myObj = {
 }
 
 printLabel(myObj);
-`,
-`
+\`\`\`
+## 可选属性
+\`\`\`
 interface SquareConfig {
 	color?: string;
 	width?: number;
@@ -72,8 +64,9 @@ let mySquare = createSquare({
 
 
 console.log(mySquare);
-`,
-`
+\`\`\`
+## 只读属性
+\`\`\`js
 interface Point {
 	readonly x: number;
 	readonly y: number;
@@ -88,8 +81,8 @@ let p1: Point = {
 console.log(p1);
 
 p1.x = 5; // [ts] 无法分配到“x”，因为它是常数或只读属性。
-`,
-`
+\`\`\`
+\`\`\`js
 let a: number[] = [1, 2, 3, 4, 5];
 let ro: ReadonlyArray<number> = a;
 
@@ -97,9 +90,9 @@ console.log(ro);
 ro[0] = 10; // [ts] 类型“ReadonlyArray<number>”中的索引签名仅允许读取
 ro.push(5); // [ts] 类型“ReadonlyArray<number>”上不存在属性“push”
 ro.length = 100; // [ts] 无法分配到“length”，因为它是常数或只读属性。
-
-`,
-`
+\`\`\`
+## 函数类型
+\`\`\`js
 interface SearchFunc {
 	(source: string, subString: string): boolean;
 }
@@ -112,9 +105,9 @@ mySearch = function (source: string, subString: string) {
 }
 
 console.log(mySearch('abcd','c'));
-`,
-
-`
+\`\`\`
+## 可索引的类型
+\`\`\`js
 interface StringArray {
 	[index: number]: string;
 }
@@ -125,41 +118,17 @@ myArray = ['aa', 'bbb'];
 let myStr: string = myArray[0];
 
 console.log(myStr);
-`,
+\`\`\`
+`;
 
+export default class extends React.Component {
 
-];
-
-
-
-class Interface extends React.Component {
-
-	constructor (props) {
+	constructor(props) {
 		super(props)
 	}
 
-	render () {
-
-		const lang = 'javascript';
-
-		return (
-			<div>
-				<ReactMarkdown source={`## 接口初探`} />
-				<SyntaxHighlighter language={lang} style={dark}>{ code[0] }</SyntaxHighlighter>
-				<SyntaxHighlighter language={lang} style={dark}>{ code[1] }</SyntaxHighlighter>
-				<ReactMarkdown source={`## 可选属性`} />
-				<SyntaxHighlighter language={lang} style={dark}>{ code[2] }</SyntaxHighlighter>
-				<ReactMarkdown source={`## 只读属性`} />
-				<SyntaxHighlighter language={lang} style={dark}>{ code[3] }</SyntaxHighlighter>
-				<SyntaxHighlighter language={lang} style={dark}>{ code[4] }</SyntaxHighlighter>
-				<ReactMarkdown source={`## 函数类型`} />
-				<SyntaxHighlighter language={lang} style={dark}>{ code[5] }</SyntaxHighlighter>
-				<ReactMarkdown source={`## 可索引的类型`} />
-				<SyntaxHighlighter language={lang} style={dark}>{ code[6] }</SyntaxHighlighter>
-			</div>
-		);
+	render() {
+		return <BlogTemplate source={source} />;
 	}
+
 }
-
-
-export default Interface;

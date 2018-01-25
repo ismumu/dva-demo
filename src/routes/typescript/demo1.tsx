@@ -1,7 +1,5 @@
 
-import * as React from 'react'
-import dva, { connect } from 'dva';
-
+import * as React from 'react';
 
 class Student {
 	fullName: string;

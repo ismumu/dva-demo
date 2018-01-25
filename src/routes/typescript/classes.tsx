@@ -1,18 +1,13 @@
 
 import * as React from 'react'
-import dva, { connect } from 'dva';
+import * as BlogTemplate from '../../components/blogTemplate/index';
 
 
-const ReactMarkdown = require('react-markdown');
-
-
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/styles/hljs';
-
-
-
-const code = [
+const source =
 `
+## 类
+
+\`\`\`js
 class Greeter {
 	greeting: string;
 	constructor (message: string) {
@@ -26,8 +21,9 @@ class Greeter {
 let greeter = new Greeter('world');
 
 console.log(greeter.greet());
-`,
-`
+\`\`\`
+## 继承
+\`\`\`js
 class Animal {
 	move (distanceInMeters: number = 0) {
 		console.log(\`Animal moved \${distanceInMeters}m.\`);
@@ -45,9 +41,8 @@ const dog = new Dog();
 dog.bark();
 dog.move(10);
 dog.bark();
-`,
-
-`
+\`\`\`
+\`\`\`js
 class Animal {
 	name: string;
 	constructor (theName: string) {
@@ -85,8 +80,9 @@ let tom: Animal = new Horse("Tommy the Palomino");
 
 sam.move(1111);
 tom.move(2222);
-`,
-`
+\`\`\`
+## 公共，私有与受保护的修饰符
+\`\`\`js
 class Person {
 	protected name: string;
 	constructor (name: string) {
@@ -108,8 +104,9 @@ class Employee extends Person {
 let howard = new Employee('Howard', 'Sales');
 console.log(howard.getElevatorPitch())
 console.log(howard.department); // [ts] 属性“department”为私有属性，只能在类“Employee”中访问
-`,
-`
+\`\`\`
+## 存取器
+\`\`\`js
 let passcode = "secret passcode";
 class Employee {
 	private _fullName: string;
@@ -132,36 +129,19 @@ employee.fullName = "Bob Smith";
 if (employee.fullName) {
     console.log(employee.fullName);
 }
-`,
+\`\`\`
 
-];
+`;
 
 
-class Classes extends React.Component {
+export default class extends React.Component {
 
-	constructor (props) {
+	constructor(props) {
 		super(props)
 	}
 
-	render () {
-
-		const lang = 'javascript';
-
-		return (
-			<div>
-				<ReactMarkdown source={`## 类`} />
-				<SyntaxHighlighter language={lang} style={dark}>{ code[0] }</SyntaxHighlighter>
-				<ReactMarkdown source={`## 继承`} />
-				<SyntaxHighlighter language={lang} style={dark}>{ code[1] }</SyntaxHighlighter>
-				<SyntaxHighlighter language={lang} style={dark}>{ code[2] }</SyntaxHighlighter>
-				<ReactMarkdown source={`## 公共，私有与受保护的修饰符`} />
-				<SyntaxHighlighter language={lang} style={dark}>{ code[3] }</SyntaxHighlighter>
-				<ReactMarkdown source={`## 存取器`} />
-				<SyntaxHighlighter language={lang} style={dark}>{ code[4] }</SyntaxHighlighter>
-			</div>
-		);
+	render() {
+		return <BlogTemplate source={source} />;
 	}
+
 }
-
-
-export default Classes;

@@ -1,41 +1,26 @@
-
 import * as React from 'react'
-import dva, { connect } from 'dva';
+import * as BlogTemplate from '../../components/blogTemplate/index';
 
 
-const ReactMarkdown = require('react-markdown');
-
-
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/styles/hljs';
-
-
-
-const codes = [
+const source =
 `
+## 泛型
+\`\`\`js
 function identity<T>(any: T): T {
 	return any;
 }
-`
+\`\`\`
+`;
 
-];
 
+export default class extends React.Component {
 
-export default class Generics extends React.Component {
-
-	constructor (props) {
+	constructor(props) {
 		super(props)
 	}
 
-	render () {
-
-		const lang = 'javascript';
-
-		return (
-			<div>
-				<ReactMarkdown source={`## 泛型`} />
-				<SyntaxHighlighter language={lang} style={dark}>{ codes[0] }</SyntaxHighlighter>
-			</div>
-		);
+	render() {
+		return <BlogTemplate source={source} />;
 	}
+
 }

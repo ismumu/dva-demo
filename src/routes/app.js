@@ -75,9 +75,6 @@ class App extends React.Component {
 		if ( !loading.global ) {
 			NProgress.done();
 		}
-
-		console.log(11111)
-
 	}
 
 	updateNode = (node) => {
