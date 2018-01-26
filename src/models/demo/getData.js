@@ -49,7 +49,7 @@ export default {
 				let key = Math.random().toString(36).substr(2);
 
 				obj.key = key;
-				obj.address = '西湖区湖底公园' + key + '号';
+				obj.address = '西湖区湖底公园';
 
 			})
 
