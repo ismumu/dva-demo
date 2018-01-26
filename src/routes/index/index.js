@@ -32,7 +32,7 @@ class IndexPage extends React.Component {
 
 				<div className={styles.homeContent}>
 					<div className={styles.logoWrap}><img className={styles.logo} src={logo_wb} alt="logo"/></div>
-					<h1>ismumu</h1>
+					<h1>ismumu's home</h1>
 					<nav>
 						<Link to="/demo/index">Blogs</Link>
 						<a href="https://github.com/ismumu" target="_blank">GitHub</a>

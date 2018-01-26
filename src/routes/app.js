@@ -104,7 +104,7 @@ class App extends React.Component {
 						collapsed={ dvaDemoApp.collapsed }
 						onCollapse={ this.onCollapse }
 					>
-						<div className={styles.logo}>ismumu</div>
+						<div className={styles.logo}>ismumu's home</div>
 						<Menus pathname={dvaDemoApp.pathname} />
 					</Sider>
 

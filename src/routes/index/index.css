@@ -24,12 +24,12 @@
 }
 
 .homeContent {
-position: absolute;
-top: 150px;
-left: 0;
-width: 100%;
-text-align: center;
-color: #FFF;
+	position: absolute;
+	top: 150px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	color: #FFF;
 }
 
 .homeContent .logoWrap {
@@ -49,16 +49,15 @@ color: #FFF;
 	width: 100%;
 	border-radius: 8px;
 	display: block;
-
-
 }
 
 .homeContent h1 {
-font-family: 'Verdana';
-font-weight: normal;
-font-size: 60px;
-opacity: 0.9;
-color: #F9F9F9;
+	font-family: 'Verdana';
+	font-weight: normal;
+	font-size: 40px;
+	opacity: 0.9;
+	color: #F9F9F9;
+	text-transform: capitalize;
 }
 
 
