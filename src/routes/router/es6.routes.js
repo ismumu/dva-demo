@@ -77,6 +77,13 @@ const Es6Routes = [
 		parentName: 'ES6',
 		component: () => import('../es6/async.tsx'),
 	},
+	{
+		path: '/es6/class',
+		name: 'Class',
+		parentCode: 'es6',
+		parentName: 'ES6',
+		component: () => import('../es6/class.tsx'),
+	},
 ]
 
 export default Es6Routes;
