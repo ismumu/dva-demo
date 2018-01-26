@@ -1,11 +1,11 @@
 
 const Es6Routes = [
 	{
-		path: '/es6/index',
-		name: 'index',
+		path: '/es6/let-const',
+		name: 'let const',
 		parentCode: 'es6',
 		parentName: 'ES6',
-		component: () => import('../es6/index.tsx'),
+		component: () => import('../es6/let-const.tsx'),
 	},
 	{
 		path: '/es6/symbol',
@@ -83,6 +83,13 @@ const Es6Routes = [
 		parentCode: 'es6',
 		parentName: 'ES6',
 		component: () => import('../es6/class.tsx'),
+	},
+	{
+		path: '/es6/class-extends',
+		name: 'Class 继承',
+		parentCode: 'es6',
+		parentName: 'ES6',
+		component: () => import('../es6/class-extends.tsx'),
 	},
 ]
 
