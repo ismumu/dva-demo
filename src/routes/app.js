@@ -2,8 +2,6 @@ import React from 'react';
 import dva, { connect } from 'dva';
 import { Link, withRouter } from 'dva/router';
 
-import $ from "jquery";
-
 // nprogress
 import 'nprogress/nprogress.css'
 import NProgress from 'nprogress';
