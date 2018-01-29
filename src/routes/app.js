@@ -122,7 +122,7 @@ class App extends React.Component {
 							</div>
 						</Content>
 
-						<Footer className={styles.footer} ><img src={ghs} alt="ghs" />浙公网安备 33010402001108号</Footer>
+						<Footer className={styles.footer} >Contact Email：ismmm@qq.com | <img src={ghs} alt="ghs" /> 浙公网安备 33010402001108号</Footer>
 					</Layout>
 					<BackTop />
 					<div className={styles.progressIndicator} ref={ (node) => { this.updateNode(node) } }></div>

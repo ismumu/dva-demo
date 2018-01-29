@@ -91,6 +91,13 @@ const Es6Routes = [
 		parentName: 'ES6',
 		component: () => import('../es6/class-extends.tsx'),
 	},
+	{
+		path: '/es6/module',
+		name: 'Module 的语法',
+		parentCode: 'es6',
+		parentName: 'ES6',
+		component: () => import('../es6/module.tsx'),
+	},
 ]
 
 export default Es6Routes;
