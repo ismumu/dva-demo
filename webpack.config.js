@@ -4,7 +4,9 @@ const webpack = require('webpack');
 
 module.exports = (webpackConfig, env) => {
 
-	const production = env === 'production'
+	const production = env === 'production';
+
+	console.log(webpackConfig);
 
 	// console.log(env);
 	// console.log(webpackConfig.module.rules[7]);

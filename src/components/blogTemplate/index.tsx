@@ -1,10 +1,17 @@
 
-import React from 'react';
-
+import * as React from 'react';
 const ReactMarkdown = require('react-markdown');
-import CodeBlock from './CodeBlock';
+import * as CodeBlock from './CodeBlock';
 
-class BlogTemplate extends React.Component {
+
+interface IAppProps {
+	source: string;
+}
+
+interface IAppState {}
+
+
+class BlogTemplate extends React.Component<IAppProps, IAppState> {
 
 	constructor(props) {
 		super(props)
