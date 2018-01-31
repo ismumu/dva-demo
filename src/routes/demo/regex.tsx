@@ -2,13 +2,6 @@
 import * as React from 'react'
 import BlogTemplate from '../../components/blogTemplate/index';
 
-//
-let b = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
-let a = b.test('q@qq.vi.com')
-
-console.log(a);
-
-
 const source =
 `
 # 常用的正则表达式
