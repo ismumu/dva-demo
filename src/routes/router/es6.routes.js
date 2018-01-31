@@ -98,6 +98,14 @@ const Es6Routes = [
 		parentName: 'ES6',
 		component: () => import('../es6/module.tsx'),
 	},
+	{
+		path: '/es6/module-loader',
+		name: 'Module 的加载实现',
+		parentCode: 'es6',
+		parentName: 'ES6',
+		component: () => import('../es6/module-loader.tsx'),
+	},
+
 ]
 
 export default Es6Routes;
