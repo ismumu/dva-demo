@@ -2,22 +2,31 @@
 import * as React from 'react';
 
 // highlight
-import hljs from 'highlight.js';
-import './highlight.9.11.0.github.less';
+import * as hljs from 'highlight.js';
+import 'highlight.js/styles/ocean.css';
 
 
-console.log(hljs)
+interface IAppProps {
+	language: string;
+	value: string;
+}
+
+interface IAppState {
+
+}
 
 
-class CodeBlock extends React.PureComponent {
+class CodeBlock extends React.PureComponent<IAppProps, IAppState> {
 
-	constructor(props) {
-		super(props)
-		this.setRef = this.setRef.bind(this)
+	constructor(props: IAppProps) {
+		super(props);
 	}
 
-	setRef(el) {
-		this.codeEl = el
+	// 暂存dom节点
+	codeEl: string = '';
+
+	setRef = (el) => {
+		this.codeEl = el;
 	}
 
 	componentDidMount() {
@@ -35,7 +44,7 @@ class CodeBlock extends React.PureComponent {
 	render() {
 		return (
 			<pre>
-				<code ref={this.setRef} className={this.props.language}>
+				<code ref={(node) => this.setRef(node)} className={this.props.language}>
 					{this.props.value}
 				</code>
 			</pre>
@@ -43,5 +52,4 @@ class CodeBlock extends React.PureComponent {
 	}
 }
 
-// module.exports = CodeBlock
 export default CodeBlock;
