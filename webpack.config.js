@@ -6,7 +6,7 @@ module.exports = (webpackConfig, env) => {
 
 	const production = env === 'production';
 
-	console.log(webpackConfig);
+	// console.log(webpackConfig.module.rules);
 
 	// console.log(env);
 	// console.log(webpackConfig.module.rules[7]);

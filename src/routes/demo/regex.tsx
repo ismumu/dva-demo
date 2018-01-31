@@ -1,11 +1,6 @@
 
-import React from 'react'
+import * as React from 'react'
 import BlogTemplate from '../../components/blogTemplate/index';
-
-
-console.log(React);
-console.log(BlogTemplate);
-
 
 const source =
 `

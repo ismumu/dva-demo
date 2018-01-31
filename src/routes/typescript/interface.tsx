@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as BlogTemplate from '../../components/blogTemplate/index';
+import BlogTemplate from '../../components/blogTemplate/index';
 
 
 const source =

@@ -1,9 +1,13 @@
-const React = require('react')
-const PropTypes = require('prop-types')
+
+import * as React from 'react';
 
 // highlight
-import hljs from './highlight.9.11.0.github';
+import hljs from 'highlight.js';
 import './highlight.9.11.0.github.less';
+
+
+console.log(hljs)
+
 
 class CodeBlock extends React.PureComponent {
 
@@ -37,15 +41,6 @@ class CodeBlock extends React.PureComponent {
 			</pre>
 		)
 	}
-}
-
-CodeBlock.defaultProps = {
-	language: ''
-}
-
-CodeBlock.propTypes = {
-	value: PropTypes.string.isRequired,
-	language: PropTypes.string
 }
 
 // module.exports = CodeBlock

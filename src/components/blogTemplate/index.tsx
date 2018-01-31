@@ -1,7 +1,7 @@
 
 import * as React from 'react';
 const ReactMarkdown = require('react-markdown');
-import * as CodeBlock from './CodeBlock';
+import CodeBlock from './CodeBlock';
 
 
 interface IAppProps {
