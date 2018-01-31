@@ -105,6 +105,13 @@ const Es6Routes = [
 		parentName: 'ES6',
 		component: () => import('../es6/module-loader.tsx'),
 	},
+	{
+		path: '/es6/eslint',
+		name: 'ESLint 的使用',
+		parentCode: 'es6',
+		parentName: 'ES6',
+		component: () => import('../es6/eslint.tsx'),
+	},
 
 ]
 
