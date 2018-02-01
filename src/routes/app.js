@@ -26,57 +26,56 @@ import ghs from '../assets/images/ghs.png';
 
 
 
-
-// let progressIndicatorDom = '';
-
 class App extends React.Component {
 
 	constructor ( props ) {
 		super (props);
-	}
-
-	componentDidMount () {
 
 
+		const { dispatch } = props;
 
 		// top scroll progress indicatorDom
+		window.onscroll = function () {
 
-		// $(function(){
-		// 	var $w = $(window);
-		// 	var $prog = $(progressIndicatorDom);
-		// 	var wh = $w.height();
-		// 	var h = $('.ant-layout').height();
-		// 	var sHeight = h - wh;
+			let windowHeight = document.body.clientHeight; // 屏幕高度
+			let bodyHeight =  document.body.scrollHeight; // 内容高度
+			let sHeight = bodyHeight - windowHeight;
+			let scrollY =  window.scrollY // 滚动条距离顶部的高度
 
-		// 	$w.on('scroll', function() {
-		// 		window.requestAnimationFrame(function(){
-		// 			var perc = Math.max(0, Math.min(1, $w.scrollTop() / sHeight));
-		// 			$prog.css({width: perc * 100 + '%'});
-		// 		});
-		// 	});
-		// })
-
+			window.requestAnimationFrame(function(){
+				dispatch({
+					type: 'dvaDemoApp/updateState',
+					payload: {
+						progressWidth: Math.max(0, Math.min(1, scrollY / sHeight)) * 100,
+					}
+				})
+			});
+		}
 
 	}
 
-
-
 	componentWillUpdate () {
-		// router更新后返回页面顶部
-		window.scrollTo(0, 0);
 
-		NProgress.start();
+		const { dvaDemoApp, dispatch, location } = this.props;
+
+		let _routers = dvaDemoApp.routers;
+
+
+		if ( _routers[_routers.length -1] != location.pathname ) {
+			// router更新后返回页面顶部
+			window.scrollTo(0, 0);
+			NProgress.start();
+		}
+
 	}
 
 	componentDidUpdate () {
+
 		const { loading } = this.props;
 		if ( !loading.global ) {
 			NProgress.done();
 		}
-	}
 
-	updateNode = (node) => {
-		// progressIndicatorDom = node;
 	}
 
 	onCollapse = () => {
@@ -103,7 +102,7 @@ class App extends React.Component {
 						onCollapse={ this.onCollapse }
 					>
 						<div className={styles.logo}>ismumu's home</div>
-						<Menus pathname={dvaDemoApp.pathname} />
+						<Menus pathname={location.pathname} />
 					</Sider>
 
 					<Layout>
@@ -125,7 +124,7 @@ class App extends React.Component {
 						<Footer className={styles.footer} >Contact Email：ismmm@qq.com | <img src={ghs} alt="ghs" /> 浙公网安备 33010402001108号</Footer>
 					</Layout>
 					<BackTop />
-					<div className={styles.progressIndicator} ref={ (node) => { this.updateNode(node) } }></div>
+					<div className={styles.progressIndicator} style={{'width': dvaDemoApp.progressWidth + '%'}}></div>
 				</Layout>
 			)
 		} else {

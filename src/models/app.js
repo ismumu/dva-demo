@@ -4,19 +4,22 @@ export default {
 
 	state: {
 		collapsed: false,
-		pathname: '/',
+		progressWidth: 0,
+		routers: [],
 	},
 
 	subscriptions: {
 		setup({ dispatch, history }) {
-			history.listen((locaion) => {
+
+			history.listen(function (location) {
 				dispatch({
-					type: 'updateState',
+					type: 'updateStateRouters',
 					payload: {
-						pathname: locaion.pathname,
+						path: location.pathname,
 					}
 				})
 			})
+
 		},
 	},
 
@@ -25,6 +28,13 @@ export default {
 	},
 
 	reducers: {
+
+		updateStateRouters (state, action) {
+
+			state.routers.push(action.payload.path);
+
+			return state
+		},
 
 		updateState (state, action) {
 			return {
