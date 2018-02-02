@@ -1,43 +1,46 @@
 {
-  "private": true,
-  "scripts": {
-    "start": "roadhog server",
-    "build": "roadhog build",
-    "lint": "eslint --ext .js src test"
-  },
-  "engines": {
-    "install-node": "6.11.1"
-  },
-  "dependencies": {
-    "@types/css-modules": "^1.0.0",
-    "@types/highlight.js": "^9.12.2",
-    "@types/react": "^16.0.35",
-    "@types/react-dom": "^16.0.3",
-    "antd": "^3.0.3",
-    "babel-runtime": "^6.9.2",
-    "dva": "^2.1.0",
-    "dva-loading": "^1.0.4",
-    "highlight.js": "^9.12.0",
-    "keymaster": "^1.6.2",
-    "mockjs": "^1.0.1-beta3",
-    "nprogress": "^0.2.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-dom-factories": "^1.0.2",
-    "react-markdown": "^3.1.4"
-  },
-  "devDependencies": {
-    "babel-eslint": "^8.2.1",
-    "babel-plugin-dva-hmr": "^0.3.2",
-    "babel-plugin-transform-runtime": "^6.9.0",
-    "eslint": "^3.12.2",
-    "eslint-config-airbnb": "^13.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^2.2.3",
-    "eslint-plugin-react": "^6.8.0",
-    "expect": "^1.20.2",
-    "husky": "^0.12.0",
-    "redbox-react": "^1.4.3",
-    "roadhog": "^1.2.1"
-  }
+	"name": "ismumu",
+	"version": "1.0.0",
+	"homepage": "http://ismumu.com",
+	"private": true,
+	"scripts": {
+		"start": "roadhog server",
+		"build": "roadhog build",
+		"lint": "eslint --ext .js src test"
+	},
+	"engines": {
+		"install-node": "6.11.1"
+	},
+	"dependencies": {
+		"@types/css-modules": "^1.0.0",
+		"@types/highlight.js": "^9.12.2",
+		"@types/react": "^16.0.35",
+		"@types/react-dom": "^16.0.3",
+		"antd": "^3.0.3",
+		"babel-runtime": "^6.9.2",
+		"dva": "^2.1.0",
+		"dva-loading": "^1.0.4",
+		"highlight.js": "^9.12.0",
+		"keymaster": "^1.6.2",
+		"mockjs": "^1.0.1-beta3",
+		"nprogress": "^0.2.0",
+		"react": "^16.2.0",
+		"react-dom": "^16.2.0",
+		"react-dom-factories": "^1.0.2",
+		"react-markdown": "^3.1.4"
+	},
+	"devDependencies": {
+		"babel-eslint": "^8.2.1",
+		"babel-plugin-dva-hmr": "^0.3.2",
+		"babel-plugin-transform-runtime": "^6.9.0",
+		"eslint": "^3.12.2",
+		"eslint-config-airbnb": "^13.0.0",
+		"eslint-plugin-import": "^2.2.0",
+		"eslint-plugin-jsx-a11y": "^2.2.3",
+		"eslint-plugin-react": "^6.8.0",
+		"expect": "^1.20.2",
+		"husky": "^0.12.0",
+		"redbox-react": "^1.4.3",
+		"roadhog": "^1.2.1"
+	}
 }

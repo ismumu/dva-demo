@@ -24,13 +24,6 @@ const DemoRoutes = [
 		models: () => [import('../../models/demo/importCommonComponents.js')],
 		component: () => import('../demo/importCommonComponents.js'),
 	},
-	{
-		path: '/demo/regex',
-		name: '常用正则',
-		parentCode: 'demo',
-		parentName: 'Demo',
-		component: () => import('../demo/regex.tsx'),
-	},
 ]
 
 export default DemoRoutes;
