@@ -1,6 +1,7 @@
 # ismumu's home
 
-<a href="http://ismumu.com">ismumu's home</a>
+npm install
 
+npm start 
 
-
+使用dva2 + react + ant
