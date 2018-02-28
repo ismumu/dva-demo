@@ -8,3 +8,7 @@
 # misc
 .DS_Store
 npm-debug.log*
+
+
+/.next
+/.vscode
