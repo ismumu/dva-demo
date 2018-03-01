@@ -1,4 +1,4 @@
-# ismumu's home
+# ismumu's home ( for ssr )
 
 npm install
 

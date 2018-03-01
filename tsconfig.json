@@ -1,32 +1,26 @@
 {
+	"compileOnSave": false,
 	"compilerOptions": {
-		"outDir": "build/dist",
+		"target": "esnext",
 		"module": "esnext",
-		"target": "es2015",
-		"lib": [
-			"es6",
-			"dom"
-		],
-		"sourceMap": true,
+		"jsx": "preserve",
 		"allowJs": true,
-		"jsx": "react",
-		"moduleResolution": "Node",
-		"rootDir": "src",
-		"forceConsistentCasingInFileNames": true,
-		"noImplicitReturns": true,
-		"noImplicitThis": true,
-		"noImplicitAny": false,
-		"strictNullChecks": true,
-		"suppressImplicitAnyIndexErrors": true,
-		"noUnusedLocals": true,
+		"moduleResolution": "node",
 		"allowSyntheticDefaultImports": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"removeComments": false,
+		"preserveConstEnums": true,
+		"sourceMap": true,
+		"skipLibCheck": true,
+		"baseUrl": ".",
 		"typeRoots": [
-            "node_modules/@types"
+			"./node_modules/@types"
 		],
-	},
-
-	"exclude": [
-		"node_modules",
-		"dist",
-	]
+		"lib": [
+			"dom",
+			"es2015",
+			"es2016"
+		]
+	}
 }
