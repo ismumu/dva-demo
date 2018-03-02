@@ -15,8 +15,7 @@ export default class MyDocument extends Document {
 	render() {
 
 		// const { nextStyle } = this.props;
-
-		console.log(this.styles)
+		// console.log(this.styles)
 
 		return (
 			<html>

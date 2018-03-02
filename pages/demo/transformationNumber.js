@@ -19,7 +19,7 @@ class DemoImportCommonComponents extends React.Component {
 		const { dispatch, demoImportCommonComponents } = this.props;
 
 		return (
-			<div>
+			<div className="body">
 				<TransformationNumber></TransformationNumber>
 				<Link href="/">
                     <a>Go to /index</a>
