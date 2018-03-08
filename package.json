@@ -12,6 +12,8 @@
 		"install-node": "6.11.1"
 	},
 	"dependencies": {
+		"@babel/core": "^7.0.0-beta.40",
+		"@babel/plugin-proposal-optional-chaining": "^7.0.0-beta.40",
 		"@types/css-modules": "^1.0.0",
 		"@types/highlight.js": "^9.12.2",
 		"@types/react": "^16.0.35",
